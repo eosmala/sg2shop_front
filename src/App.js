@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav url="http://localhost/"/> {/* TÄMÄ VOI OLLA ERI. VAIHDA OIKEAAN */}
+      <Nav url="http://localhost/"/>
       <div className="container">
         <Switch>
           <Route path="/" component={Home} exact />

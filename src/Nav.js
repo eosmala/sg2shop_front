@@ -7,7 +7,7 @@ export default function Nav({url}) {
     console.log("Navissa oleva url muuttuja: ", url);
     useEffect(async() => {
         try {
-            const response = await fetch(url + 'koulu/sg2shop_back/inc/getcategories.php'); // VAIHDA TÄMÄ POLKUUN, JOHON OLET TALLENTANUT BACKENDIN.
+            const response = await fetch(url + '/sg2shop_back/inc/getcategories.php');
             const json = await response.json();
             if (response.ok) {
                 setCategories(json);
