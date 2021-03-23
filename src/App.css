@@ -2,6 +2,7 @@ body {
   background-color: beige;
 }
 
+
 h4,h3,h2,ul {
   font-family: 'Averia Serif Libre', cursive;
   font-style: oblique;
@@ -11,4 +12,14 @@ h4,h3,h2,ul {
 p {
   font-family: 'Averia Serif Libre', cursive;
   font-size: medium!important;
+}
+
+nav li a:hover {
+  background-color: antiquewhite;
+}
+
+.active {
+  font-weight: bold;
+  border: black solid 1px;
+
 }
