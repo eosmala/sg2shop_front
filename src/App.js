@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav />
+      <Nav url="http://localhost/"/> {/* TÄMÄ VOI OLLA ERI. VAIHDA OIKEAAN */}
       <div className="container">
         <Switch>
           <Route path="/" component={Home} exact />
