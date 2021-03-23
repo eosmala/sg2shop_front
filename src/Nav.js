@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+=======
+import {Link, NavLink} from 'react-router-dom';
+>>>>>>> ad623fd268ca0bd476d075097b5020e9e6a31c10
 
 export default function Nav({url}) {
     const [categories, setCategories] = useState([]);
@@ -23,15 +27,24 @@ export default function Nav({url}) {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ paddingLeft: '12px' }}>
-                <Link to="/" className="navbar-brand text-decoration-none text-dark">Elukoille rojuja</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <Link to="/" className="nav-link text-decoration-none text-dark">Home</Link>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Dogs">Koirat</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Cats">Kissat</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/SmallPets">Pieneläimet</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Sale">Tarjoukset</NavLink>
+                        </li>
+<<<<<<< HEAD
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Products
@@ -54,6 +67,11 @@ export default function Nav({url}) {
                                 ))}
                                 </div>
                             </li>
+=======
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Products">Products</NavLink>
+                        </li>
+>>>>>>> ad623fd268ca0bd476d075097b5020e9e6a31c10
                     </ul>
                 </div>
             </nav>
