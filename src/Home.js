@@ -3,10 +3,15 @@ import add1 from './img/mainos1.jpg'
 import temp1 from './img/placeholder.jpg'
 import temp2 from './img/placeholder2.jpg'
 import temp3 from './img/placeholder3.jpg'
+import temp4 from './img/placeholder4.jpg'
+
+
+
 export default function Home() {
     return (
+        
         <div>
-            <section className="masthead text-white text-center bg-dark">
+      <section className="masthead text-white text-center bg-dark">
                 <div className="overlay"></div>
                 <div className="container">
                     <div className="row">
@@ -62,32 +67,7 @@ export default function Home() {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Ruoka tuotteita</h4>
-                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-target="#carouselExampleIndicators" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-target="#carouselExampleIndicators" data-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-target="#carouselExampleIndicators" data-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner"> 
-    <div class="carousel-item active">
-      <img src={temp1} class="d-block w-100" alt="..."/>
-    </div>
-    <div class="carousel-item">
-      <img src={temp2} class="d-block w-100" alt="..."/>
-    </div>
-    <div class="carousel-item">
-      <img src={temp3} class="d-block w-100" alt="..."/>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"  data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"  data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> 
+                                
                                 <p className="card-text">placeholder</p>
                             </div>
                             <div className="card-footer">
@@ -98,7 +78,121 @@ export default function Home() {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Suosituimmat tuotteet</h4>
-                                <p className="card-text">placeholder</p>
+                                <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card border-light mb-3">
+      <img src={temp1} class="card-img-top" alt="..."/>
+      <div class="card-body">
+      <div class="hearttest">
+        <h5 class="card-title">Stuff</h5> 
+        </div>
+        
+        <div class="hearttest">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+        <br></br>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <br></br>
+        <div class="hearttest">
+            <p>20€</p>
+            </div>
+        <div class="hearttest">
+            <button type="button" class="btn btn-success btn-sm">Osta</button>
+        </div> 
+        
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-light mb-3 ">
+      <img src={temp2} class="card-img-top" alt="..."/>
+      <div class="card-body">
+      <div class="hearttest">
+        <h5 class="card-title">Cat</h5> 
+        </div>
+        
+        <div class="hearttest">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+        <br></br>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <br></br>
+        <div class="hearttest">
+            <p>20€</p>
+            </div>
+        <div class="hearttest">
+            <button type="button" class="btn btn-success btn-sm">Osta</button>
+        </div> 
+        
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-light mb-3">
+      <img src={temp3} class="card-img-top" alt="..."/>
+      <div class="card-body">
+          <div class="hearttest">
+        <h5 class="card-title">Dog </h5> 
+        </div>
+        
+        <div class="hearttest">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+        <br></br>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <br></br>
+        <div class="hearttest">
+            <p>20€</p>
+            </div>
+        <div class="hearttest">
+            <button type="button" class="btn btn-success btn-sm">Osta</button>
+        </div> 
+        
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-light mb-3">
+      <img src={temp4} class="card-img-top" alt="..."/>
+      <div class="card-body">
+      <div class="hearttest">
+        <h5 class="card-title">Yeet</h5> 
+        </div>
+        
+        <div class="hearttest">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+        <br></br>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <br></br>
+        <div class="hearttest">
+            <p>20€</p>
+            </div>
+        <div class="hearttest">
+            <button type="button" class="btn btn-success btn-sm">Osta</button>
+        </div> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+                                
                             </div>
                             <div className="card-footer">
                             </div>
@@ -118,7 +212,7 @@ export default function Home() {
                 </div>
             </section>
 
-
+     
 
         </div>
     )

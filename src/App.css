@@ -23,3 +23,28 @@ nav li a:hover {
   border: black solid 1px;
 
 }
+
+
+i.fa.fa-star, i.fa.fa-star-o{
+  color: gold;
+  
+}
+
+.hearttest {
+display: inline-block;
+position: relative;
+padding-right: 6px;
+padding-top: 1px;
+
+}
+
+i.fa.fa-heart-o {
+  padding-left: 1px;
+  cursor: pointer;
+  float: right;
+  
+}
+
+i.fa.fa-heart-o:hover {
+  color:red;
+}
