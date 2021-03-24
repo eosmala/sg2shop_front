@@ -28,43 +28,25 @@ export default function Nav({url}) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Dogs">Koirat</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Cats">Kissat</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/SmallPets">Pieneläimet</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Sale">Tarjoukset</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Products">Products</NavLink>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Products
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                {categories.map(category => (
+                    {categories.map(category => (
                                 <li key={category.id}>
-                                    <Link
-                                    className="dropdown-item"
+                                    <NavLink
+                                    activeClassName="active"
+                                    className="nav-link text-decoration-none text-dark"
                                     to={{
-                                        pathname: '/',
+                                        pathname: category.name,
                                         state: {
                                             id: category.id,
                                             name: category.name
                                         }
                                     }}
                                     >{category.name}
-                                    </Link>
+                                    </NavLink>
                                     </li>
                                 ))}
-                                </div>
-                            </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Tuotteet">Tuotteet</NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>

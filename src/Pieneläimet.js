@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SmallPets() {
+export default function Pieneläimet() {
     return (
         <div>
             <p>Pieneläinten ruoat ja tarvikkeet</p>
