@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default function Nav({url}) {
     const [categories, setCategories] = useState([]);
@@ -22,7 +22,7 @@ export default function Nav({url}) {
 
     return (
         <div className="container">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ paddingLeft: '12px' }}>
+            <nav className="navbar navbar-expand-lg ps-2 rounded">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +32,7 @@ export default function Nav({url}) {
                                 <li key={category.id}>
                                     <NavLink
                                     activeClassName="active"
-                                    className="nav-link text-decoration-none text-dark"
+                                    className="nav-link text-decoration-none rounded"
                                     to={{
                                         pathname: category.name,
                                         state: {
@@ -45,7 +45,7 @@ export default function Nav({url}) {
                                     </li>
                                 ))}
                         <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Tuotteet">Tuotteet</NavLink>
+                            <NavLink activeClassName="active" className="nav-link text-decoration-none rounded" to="/Tuotteet">Tuotteet</NavLink>
                         </li>
                     </ul>
                 </div>
