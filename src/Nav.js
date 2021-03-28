@@ -1,9 +1,11 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import Cart from './Cart';
 
-export default function Nav({url}) {
+export default function Nav({url, cart, setCategory}) {
     const [categories, setCategories] = useState([]);
+
     console.log("Navissa oleva url muuttuja: ", url);
     useEffect(async() => {
         try {
@@ -46,6 +48,11 @@ export default function Nav({url}) {
                                 ))}
                         <li className="nav-item">
                             <NavLink activeClassName="active" className="nav-link text-decoration-none text-dark" to="/Tuotteet">Tuotteet</NavLink>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <Cart cart={cart} />
                         </li>
                     </ul>
                 </div>

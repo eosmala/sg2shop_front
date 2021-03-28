@@ -7,7 +7,7 @@ import temp4 from './img/placeholder4.jpg'
 
 
 
-export default function Home() {
+export default function Home({url, category, addToCart}) {
     return (
         
         <div>

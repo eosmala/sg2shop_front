@@ -48,3 +48,13 @@ i.fa.fa-heart-o {
 i.fa.fa-heart-o:hover {
   color:red;
 }
+
+.fa-shopping-cart {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+#cart {
+  color: black;
+  text-decoration: none;
+}

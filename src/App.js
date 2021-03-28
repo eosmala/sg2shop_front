@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -12,13 +12,28 @@ import Pieneläimet from './Pieneläimet';
 import Tarjoukset from './Tarjoukset';
 
 function App() {
+  const [category, setCategory] = useState(null);
+  const [cart, setCart] = useState([]);
+
+  let location = useLocation();
+
+  useEffect(() => {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  }, [])
+
   return (
     <>
       <Header />
-      <Nav url="http://localhost/"/>
+      <Nav url="http://localhost/" cart={cart} setCategory={setCategory}/>
       <div className="container">
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" component={Home}
+           category={category}
+           addtoCart={addtoCart}
+           exact
+          />
           <Route path="/Tuotteet" component={Tuotteet} />
           <Route path="/Koirat" component={Koirat} />
           <Route path="/Kissat" component={Kissat} />
@@ -29,6 +44,12 @@ function App() {
       <Footer />
     </>
   );
+
+  function addtoCart(product) {
+    const newCart = [...cart,product];
+    setCart(newCart);
+    localStorage.setItem('cart',JSON.stringify(newCart));
+  }
 }
 
 export default App;
