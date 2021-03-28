@@ -11,7 +11,7 @@ export default function Home({url, category, addToCart}) {
     return (
         
         <div>
-      <section className="masthead text-white text-center bg-dark">
+      <section className="masthead text-center">
                 <div className="overlay"></div>
                 <div className="container">
                     <div className="row">
@@ -28,7 +28,7 @@ export default function Home({url, category, addToCart}) {
                     </div>
                 </div>
             </section>
-            <section className="features-icons bg-light text-center">
+            <section className="features-icons text-center">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
