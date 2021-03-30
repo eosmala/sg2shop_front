@@ -11,11 +11,18 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
-    .nav-link {
+    .nav-link, #cart {
         color: ${({ theme }) => theme.text }
     }
 
     .navbar {
         background: ${({ theme }) => theme.nav };
+    }
+
+    #cart span{
+        background-color: ${({ theme }) => theme.body };
+    }
+    .bar1, .bar2, .bar3 {
+        background-color: ${({ theme }) => theme.text }
     }
     `
