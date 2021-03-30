@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
+    .footer,
     .navbar {
         background: ${({ theme }) => theme.nav };
     }
@@ -25,4 +26,7 @@ export const GlobalStyles = createGlobalStyle`
     .bar1, .bar2, .bar3 {
         background-color: ${({ theme }) => theme.text }
     }
+    .copyright {
+        background-color: ${({ theme }) => theme.darkgreen };
+      }
     `
