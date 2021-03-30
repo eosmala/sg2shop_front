@@ -5,17 +5,18 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Nav from './Nav';
-import Tuotteet from './Tuotteet';
-import Koirat from './Koirat';
-import Kissat from './Kissat';
-import Pieneläimet from './Pieneläimet';
-import Tarjoukset from './Tarjoukset';
 
 function App() {
   const [category, setCategory] = useState(null);
   const [cart, setCart] = useState([]);
 
-  let location = useLocation();
+  const URL = "http://localhost/sg2shop_back/"
+
+  // let location = useLocation();
+
+  function settingCategory(category) {
+    setCategory(category)
+  }
 
   useEffect(() => {
     if ('cart' in localStorage) {
@@ -26,19 +27,17 @@ function App() {
   return (
     <>
       <Header />
-      <Nav url="http://localhost/" cart={cart} setCategory={setCategory}/>
+      <Nav url={URL} cart={cart} settingCategory={settingCategory}/>
       <div className="container">
         <Switch>
-          <Route path="/" component={Home}
+          <Route path="/" render={()=>
+          <Home
            category={category}
            addtoCart={addtoCart}
+           url={URL} />}
            exact
           />
-          <Route path="/Tuotteet" component={Tuotteet} />
-          <Route path="/Koirat" component={Koirat} />
-          <Route path="/Kissat" component={Kissat} />
-          <Route path="/Pieneläimet" component={Pieneläimet} />
-          <Route path="/Tarjoukset" component={Tarjoukset} />
+
         </Switch>
       </div>
       <Footer />

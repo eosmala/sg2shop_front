@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import Cart from './Cart';
 
-export default function Nav({url, cart, setCategory}) {
+export default function Nav({url, cart, settingCategory}) {
     const [categories, setCategories] = useState([]);
+    settingCategory(categories)
 
-    console.log("Navissa oleva url muuttuja: ", url);
     useEffect(async() => {
         try {
-            const response = await fetch(url + '/sg2shop_back/inc/getcategories.php');
+            const response = await fetch(url + 'products/getcategories.php');
             const json = await response.json();
             if (response.ok) {
                 setCategories(json);

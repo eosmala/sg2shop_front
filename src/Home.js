@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import add1 from './img/mainos1.jpg'
 import temp1 from './img/placeholder.jpg'
 import temp2 from './img/placeholder2.jpg'
@@ -7,11 +7,30 @@ import temp4 from './img/placeholder4.jpg'
 
 
 
-export default function Home({url, category, addToCart}) {
+export default function Home({ url, category, addToCart }) {
+    const [products, setProducts] = useState([]);
+    console.log("kategoria on " + category)
+
+
+    // useEffect(async() => {
+    //     try {
+
+    //         const response = await fetch('http://localhost/sg2shop_back/products/getproducts.php/' + category?.id);
+    //         const json = await response.json();
+
+    //         if (response.ok) {
+    //             setProducts(json);
+    //         } else {
+    //             alert(json.error);
+    //         }
+    //     } catch (error) {
+    //         alert(error);
+    //     }
+    // }, [category])
+
     return (
-        
         <div>
-      <section className="masthead text-center">
+            <section className="masthead text-center">
                 <div className="overlay"></div>
                 <div className="container">
                     <div className="row">
@@ -19,7 +38,7 @@ export default function Home({url, category, addToCart}) {
                             <h2 className="m-2">Tarjouksessa nyt</h2>
                             <div className="">
                                 <img className="img-fluid mw-100 "
-                                src = {add1} alt="add"
+                                    src={add1} alt="add"
                                 />
                             </div>
                         </div>
@@ -67,7 +86,7 @@ export default function Home({url, category, addToCart}) {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Ruoka tuotteita</h4>
-                                
+
                                 <p className="card-text">placeholder</p>
                             </div>
                             <div className="card-footer">
@@ -78,121 +97,121 @@ export default function Home({url, category, addToCart}) {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Suosituimmat tuotteet</h4>
-                                <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card border-light mb-3">
-      <img src={temp1} class="card-img-top" alt="..."/>
-      <div class="card-body">
-      <div class="hearttest">
-        <h5 class="card-title">Stuff</h5> 
-        </div>
-        
-        <div class="hearttest">
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <br></br>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <br></br>
-        <div class="hearttest">
-            <p>20€</p>
-            </div>
-        <div class="hearttest">
-            <button type="button" class="btn btn-success btn-sm">Osta</button>
-        </div> 
-        
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card border-light mb-3 ">
-      <img src={temp2} class="card-img-top" alt="..."/>
-      <div class="card-body">
-      <div class="hearttest">
-        <h5 class="card-title">Cat</h5> 
-        </div>
-        
-        <div class="hearttest">
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <br></br>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <br></br>
-        <div class="hearttest">
-            <p>20€</p>
-            </div>
-        <div class="hearttest">
-            <button type="button" class="btn btn-success btn-sm">Osta</button>
-        </div> 
-        
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card border-light mb-3">
-      <img src={temp3} class="card-img-top" alt="..."/>
-      <div class="card-body">
-          <div class="hearttest">
-        <h5 class="card-title">Dog </h5> 
-        </div>
-        
-        <div class="hearttest">
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <br></br>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <br></br>
-        <div class="hearttest">
-            <p>20€</p>
-            </div>
-        <div class="hearttest">
-            <button type="button" class="btn btn-success btn-sm">Osta</button>
-        </div> 
-        
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card border-light mb-3">
-      <img src={temp4} class="card-img-top" alt="..."/>
-      <div class="card-body">
-      <div class="hearttest">
-        <h5 class="card-title">Yeet</h5> 
-        </div>
-        
-        <div class="hearttest">
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        </div>
-        <br></br>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i>
-        <br></br>
-        <div class="hearttest">
-            <p>20€</p>
-            </div>
-        <div class="hearttest">
-            <button type="button" class="btn btn-success btn-sm">Osta</button>
-        </div> 
-        
-      </div>
-    </div>
-  </div>
-</div>
-                                
+                                <div className="row row-cols-1 row-cols-md-2 g-4">
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp1} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Stuff</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3 ">
+                                            <img src={temp2} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Cat</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp3} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Dog </h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp4} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Yeet</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div className="card-footer">
                             </div>
@@ -212,7 +231,7 @@ export default function Home({url, category, addToCart}) {
                 </div>
             </section>
 
-     
+
 
         </div>
     )
