@@ -15,7 +15,11 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
+    .footer,
     .navbar {
         background: ${({ theme }) => theme.nav };
     }
+    .copyright {
+        background-color: ${({ theme }) => theme.darkgreen };
+      }
     `
