@@ -13,7 +13,7 @@ export default function ThemeSwitch() {
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <>
           <GlobalStyles />
-          <button className="btn btn-outline-secondary" onClick={toggleTheme}>Switch theme</button>
+          <button className="btn btn-outline-secondary" onClick={toggleTheme}>Vaihda teema</button>
           
         </>
       </ThemeProvider>
