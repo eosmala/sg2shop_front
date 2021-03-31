@@ -50,7 +50,13 @@ export default function Home({ url, category, addToCart }) {
             <section className="features-icons text-center">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4">
+                        <h3>Products for {category?.name}</h3>
+                        {products.map(product => (
+                            <div key={product.id}>
+                                <p>{product.name}</p>
+                            </div>
+                        ))}
+                        {/* <div className="col-lg-4">
                             <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <div className="features-icons-icon d-flex">
                                     <i className="icon-screen-desktop m-auto text-primary"></i>
@@ -76,7 +82,7 @@ export default function Home({ url, category, addToCart }) {
                                 <h3>Tuote 3</h3>
                                 <p className="lead mb-0">Tuote 3 kuvaus</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
