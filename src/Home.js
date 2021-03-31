@@ -9,24 +9,24 @@ import temp4 from './img/placeholder4.jpg'
 
 export default function Home({ url, category, addToCart }) {
     const [products, setProducts] = useState([]);
-    console.log("kategoria on " + category)
+    // console.log("kategoria on " + category)
 
 
-    // useEffect(async() => {
-    //     try {
+    useEffect(async() => {
+        try {
 
-    //         const response = await fetch('http://localhost/sg2shop_back/products/getproducts.php/' + category?.id);
-    //         const json = await response.json();
+            const response = await fetch('http://localhost/sg2shop_back/products/getproducts.php/' + category?.id);
+            const json = await response.json();
 
-    //         if (response.ok) {
-    //             setProducts(json);
-    //         } else {
-    //             alert(json.error);
-    //         }
-    //     } catch (error) {
-    //         alert(error);
-    //     }
-    // }, [category])
+            if (response.ok) {
+                setProducts(json);
+            } else {
+                alert(json.error);
+            }
+        } catch (error) {
+            alert(error);
+        }
+    }, [category])
 
     return (
         <div>
