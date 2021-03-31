@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
-    .nav-link {
+    .nav-link, #cart {
         color: ${({ theme }) => theme.text }
     }
 
@@ -22,4 +22,11 @@ export const GlobalStyles = createGlobalStyle`
     .copyright {
         background-color: ${({ theme }) => theme.darkgreen };
       }
+
+    #cart span{
+        background-color: ${({ theme }) => theme.body };
+    }
+    .bar1, .bar2, .bar3 {
+        background-color: ${({ theme }) => theme.text }
+    }
     `

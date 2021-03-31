@@ -27,10 +27,14 @@ export default function Nav({url, cart, setCategory}) {
         <div className="container">
             <nav className="navbar navbar-expand-lg ps-2 rounded">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon">
+                        <div className="bar1"></div>
+                        <div className="bar2"></div>
+                        <div className="bar3"></div>
+                    </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav m-auto">
                     {categories.map(category => (
                                 <li key={category.id}>
                                     <NavLink
