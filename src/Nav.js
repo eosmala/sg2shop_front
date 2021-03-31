@@ -3,9 +3,9 @@ import {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import Cart from './Cart';
 
-export default function Nav({url, cart, settingCategory}) {
+export default function Nav({url, cart, setCategory}) {
     const [categories, setCategories] = useState([]);
-    settingCategory(categories)
+    
 
     useEffect(async() => {
         try {
@@ -13,6 +13,7 @@ export default function Nav({url, cart, settingCategory}) {
             const json = await response.json();
             if (response.ok) {
                 setCategories(json);
+                setCategory(json[0]);
             } else {
                 alert(json.error);
             }

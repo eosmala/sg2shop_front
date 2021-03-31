@@ -12,12 +12,15 @@ function App() {
 
   const URL = "http://localhost/sg2shop_back/"
 
-  // let location = useLocation();
-
-  function settingCategory(category) {
-    setCategory(category)
-  }
-
+  let location = useLocation();
+  
+ useEffect(() => {
+    if(location.state !==undefined) {
+      setCategory({id: location.state.id,name: location.state.name});
+      console.log("category " + category)
+    }
+ }, [location.state])
+  
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
@@ -27,7 +30,7 @@ function App() {
   return (
     <>
       <Header />
-      <Nav url={URL} cart={cart} settingCategory={settingCategory}/>
+      <Nav url={URL} cart={cart} setCategory={setCategory}/>
       <div className="container">
         <Switch>
           <Route path="/" render={()=>
