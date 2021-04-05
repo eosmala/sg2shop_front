@@ -41,7 +41,7 @@ export default function Nav({url, cart, setCategory}) {
                                     activeClassName="active"
                                     className="nav-link text-decoration-none rounded"
                                     to={{
-                                        pathname: category.name,
+                                        pathname: "/" + category.name,
                                         state: {
                                             id: category.id,
                                             name: category.name

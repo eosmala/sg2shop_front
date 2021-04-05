@@ -36,7 +36,7 @@ function App() {
           <Route path="/" render={()=>
           <Home
            category={category}
-           addtoCart={addtoCart}
+           addToCart={addToCart}
            url={URL} />}
            exact
           />
@@ -47,7 +47,7 @@ function App() {
     </>
   );
 
-  function addtoCart(product) {
+  function addToCart(product) {
     const newCart = [...cart,product];
     setCart(newCart);
     localStorage.setItem('cart',JSON.stringify(newCart));
