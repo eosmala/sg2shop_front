@@ -29,4 +29,8 @@ export const GlobalStyles = createGlobalStyle`
     .bar1, .bar2, .bar3 {
         background-color: ${({ theme }) => theme.text }
     }
+
+    .active {
+        border-color: ${({ theme }) => theme.darkgreen };
+      }
     `

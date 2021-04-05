@@ -8,6 +8,7 @@ h4,h3,h2,ul {
 p {
   font-family: 'Averia Serif Libre', cursive;
   font-size: medium!important;
+  margin-bottom: 0rem!important;
 }
 
 nav {
@@ -25,7 +26,8 @@ nav li a:hover {
 
 .active {
   font-weight: bold;
-  border: black solid 1px;
+  border: 3px;
+  border-style: none none solid none;
 
 }
 
@@ -93,3 +95,5 @@ i.fa.fa-youtube-play, i.fa.fa-twitter {
   padding-top: 20px;
   padding-bottom: 10px;
 }
+
+

@@ -4,8 +4,8 @@ import temp1 from './img/placeholder.jpg'
 import temp2 from './img/placeholder2.jpg'
 import temp3 from './img/placeholder3.jpg'
 import temp4 from './img/placeholder4.jpg'
-
-
+import temp5 from './img/Temp5.jpg'
+import temp6 from './img/Temp6.jpg'
 
 export default function Home({ url, category, addToCart }) {
     const [products, setProducts] = useState([]);
@@ -37,16 +37,60 @@ export default function Home({ url, category, addToCart }) {
                 <div className="overlay"></div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-9 mx-auto">
+                        <div className="col-xl-6">
                             <h2 className="m-2">Tarjouksessa nyt</h2>
-                            <div className="">
-                                <img className="img-fluid mw-100 "
-                                    src={add1} alt="add"
-                                />
-                            </div>
+                            
+                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol className="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div className="carousel-inner">
+        <div className="carousel-item active" data-interval="10000">
+            <img className="img-fluid mw-100" src={add1} alt="First slide"/>
+            
+        </div>
+        <div className="carousel-item" data-interval="10000">
+            <img className="img-fluid mw-100" src={temp5} alt="Second slide"/>
+        </div>
+        <div className="carousel-item" data-interval="10000">
+            <img className="img-fluid mw-100" src={temp6} alt="Third slide"/>
+        </div>
+    </div>
+    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
+    </a>
+    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
+    </a>
+</div>
                         </div>
+
+                        <div className="col-xl-6">
+                            <h4 className="m-2">Meistä Tietoa</h4>
+                            
+ <div className="card h-90 m-3 pb-1">
+     <h5>Mikä on Elukoille rojua?</h5>
+<p>Elukoille rojuja on eläin tuotekauppa. Kauppa perustettiin vuonna 2021 viiden perustajan ja heidän eläinten raukkauden kautta. Nyt ER toivookin tuovan kaikenlaisille kavereille 
+    kotiin iloa ja mukavuutta!
+</p>
+<p>------------------------------------------</p>
+<h6>Arvosteluita</h6>
+<p>"Elukoille rojuja on mahtipaikka riippumatta mitä tarpeita on." -HS</p>
+<br/>
+<p>"Elukoille rojua on ihan paras!" -Eläimet Ry.</p>
+<br/>
+<p>"Jeee :)"</p>
+
+ </div>
+              </div>
                         <div className="col-md-10 col-lg-8 col-xl-7 mx-auto pb-4">
                         </div>
+              
+
                     </div>
                 </div>
             </section>
@@ -57,6 +101,7 @@ export default function Home({ url, category, addToCart }) {
                         {products.map(product => (
                             <div key={product.id}>
                                 <p>{product.name}</p>
+                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                             </div>
                         ))}
                         {/* <div className="col-lg-4">
