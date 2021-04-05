@@ -15,6 +15,7 @@ function App() {
   let location = useLocation();
   
  useEffect(() => {
+  
     if(location.state !==undefined) {
       setCategory({id: location.state.id,name: location.state.name});
       console.log("category " + category)

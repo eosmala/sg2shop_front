@@ -11,21 +11,24 @@ export default function Home({ url, category, addToCart }) {
     const [products, setProducts] = useState([]);
     // console.log("kategoria on " + category)
 
-
     useEffect(async() => {
-        try {
-
-            const response = await fetch('http://localhost/sg2shop_back/products/getproducts.php/' + category?.id);
-            const json = await response.json();
-
-            if (response.ok) {
-                setProducts(json);
-            } else {
-                alert(json.error);
+        if (category !== null) {
+            let address = '';
+            if (category !== null) {
+                address = url + 'products/getproducts.php/' + category?.id;
             }
-        } catch (error) {
-            alert(error);
-        }
+            try {
+                const response = await fetch(address);
+                const json = await response.json();
+                if (response.ok) {
+                    setProducts(json);
+                } else {
+                    alert(json.error);
+                }
+            } catch (error) {
+                alert(error);
+            }
+            }
     }, [category])
 
     return (
