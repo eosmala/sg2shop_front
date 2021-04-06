@@ -40,9 +40,9 @@ export default function Home({ url, category, addToCart }) {
                         <div className="col-xl-6">
                             <h2 className="m-2">Tarjouksessa nyt</h2>
                             
-                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div id="carouselExampleIndicators" className="carousel slide carousel-fade" data-ride="carousel">
     <ol className="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>

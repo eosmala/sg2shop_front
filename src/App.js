@@ -9,6 +9,7 @@ import Koirat from './Koirat';
 import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
+import ProductInfo from './ProductInfo';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -73,7 +74,12 @@ function App() {
            url={URL} />}
            exact
           />
-          
+          <Route path="/product/:id" render={()=>
+          <ProductInfo
+          addToCart={addToCart}
+          url={URL} />}
+          exact
+          />
 
         </Switch>
       </div>

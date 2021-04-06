@@ -1,10 +1,9 @@
 import React,  { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 
 export default function Tarjoukset({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
-
-    const [cart, setCart] = useState([]);
 
     useEffect(async() => {
         if (category !== null) {
@@ -28,11 +27,12 @@ export default function Tarjoukset({url, category, addToCart}) {
 
     return (
         <div className="container">
+            <h3>{category?.name}</h3>
             <p>Tarjoustuotteet</p>
-            <h3>Products for {category?.name}</h3>
                         {products.map(product => (
                             <div key={product.id}>
-                                <p>{product.name}</p>
+                                <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
+                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                             </div>
                         ))}
                  
