@@ -69,7 +69,7 @@ export default function Home({ url, category, addToCart }) {
                         <div className="col-xl-6">
                             <h4 className="m-2">Meistä Tietoa</h4>
                             
- <div className="card h-90 m-3 pb-1">
+ <div className="card h-90 m-3 pb-4">
      <h5>Mikä on Elukoille rojua?</h5>
 <p>Elukoille rojuja on eläin tuotekauppa. Kauppa perustettiin vuonna 2021 viiden perustajan ja heidän eläinten raukkauden kautta. Nyt ER toivookin tuovan kaikenlaisille kavereille 
     kotiin iloa ja mukavuutta!
@@ -81,7 +81,8 @@ export default function Home({ url, category, addToCart }) {
 <p>"Elukoille rojua on ihan paras!" -Eläimet Ry.</p>
 <br/>
 <p>"Jeee :)"</p>
-
+<br/>
+<p>"Koirat ja kissat on kivoi, jee jee"</p>
  </div>
               </div>
                         <div className="col-md-10 col-lg-8 col-xl-7 mx-auto pb-4">

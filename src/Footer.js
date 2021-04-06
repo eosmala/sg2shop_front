@@ -20,7 +20,7 @@ export default function Footer() {
                     <div className="col-lg-4 mb-5 mb-lg-0">
                         <a className="btn btn-outline-dark btn-social mx-1" href="#!"><i className="fa fa-facebook-square"></i></a>
                         <a className="btn btn-outline-dark btn-social mx-1" href="#!"><i className="fa fa-instagram"></i></a>
-                        <a className="btn btn-outline-dark btn-social mx-1" href="#!"><i className="fa fa-youtube-play"></i></a>
+                        <a className="btn btn-outline-dark btn-social mx-1" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa fa-youtube-play"></i></a>
                         <a className="btn btn-outline-dark btn-social mx-1" href="#!"><i className="fa fa-twitter"></i></a>
                     </div>
                     
