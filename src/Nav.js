@@ -51,9 +51,6 @@ export default function Nav({url, cart, setCategory}) {
                                     </NavLink>
                                     </li>
                                 ))}
-                        <li className="nav-item">
-                            <NavLink activeClassName="active" className="nav-link text-decoration-none rounded" to="/Tuotteet">Tuotteet</NavLink>
-                        </li>
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">

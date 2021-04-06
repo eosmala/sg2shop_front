@@ -1,26 +1,33 @@
-import React from 'react'
+import React,  { useState, useEffect } from 'react'
 
-export default function Koirat({category}) {
+
+export default function Koirat({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
-    console.log("kategoria on " + category)
-    useEffect(async() => {
-        try {
 
-            const response = await fetch('http://localhost/sg2shop_back/products/getproducts.php/' + category?.id);
-            const json = await response.json();
-            console.log("koirien useeffect");
-            if (response.ok) {
-                setProducts(json);
-            } else {
-                alert(json.error);
+    const [cart, setCart] = useState([]);
+
+    useEffect(async() => {
+        if (category !== null) {
+            let address = '';
+            if (category !== null) {
+                address = url + 'products/getproducts.php/' + category?.id;
             }
-        } catch (error) {
-            alert(error);
-        }
+            try {
+                const response = await fetch(address);
+                const json = await response.json();
+                if (response.ok) {
+                    setProducts(json);
+                } else {
+                    alert(json.error);
+                }
+            } catch (error) {
+                alert(error);
+            }
+            }
     }, [category])
 
     return (
-        <div>
+        <div className="container">
             <p>Koiran ruoat ja tarvikkeet</p>
             <h3>Products for {category?.name}</h3>
                         {products.map(product => (
@@ -28,6 +35,7 @@ export default function Koirat({category}) {
                                 <p>{product.name}</p>
                             </div>
                         ))}
+                 
         </div>
     )
 }

@@ -4,7 +4,11 @@ import './App.css';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
+import Kissat from './Kissat';
+import Koirat from './Koirat';
 import Nav from './Nav';
+import Tarjoukset from './Tarjoukset';
+import Pieneläimet from './Pieneläimet';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -41,6 +45,35 @@ function App() {
            url={URL} />}
            exact
           />
+          <Route path="/Kissat" render={()=>
+          <Kissat
+           category={category}
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          <Route path="/Pieneläimet" render={()=>
+          <Pieneläimet
+           category={category}
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          <Route path="/Koirat" render={()=>
+          <Koirat
+           category={category}
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          <Route path="/Tarjoukset" render={()=>
+          <Tarjoukset
+           category={category}
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          
 
         </Switch>
       </div>
