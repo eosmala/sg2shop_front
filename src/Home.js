@@ -99,6 +99,7 @@ export default function Home({ url, category, addToCart }) {
                         {products.map(product => (
                             <div key={product.id}>
                                 <p>{product.name}</p>
+                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                             </div>
                         ))}
                         {/* <div className="col-lg-4">
