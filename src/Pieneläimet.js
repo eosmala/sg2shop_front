@@ -1,6 +1,6 @@
 import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-
+import placeholder from './img/logo.png';
 
 export default function Pieneläimet({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
@@ -29,13 +29,18 @@ export default function Pieneläimet({url, category, addToCart}) {
         <div className="container">
             <h3>{category?.name}</h3>
             <p>Pieneläinten ruoat ja tarvikkeet</p>
-                        {products.map(product => (
-                            <div key={product.id}>
-                                <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
-                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
-                            </div>
-                        ))}
-                 
+            {products.map(product => (
+                <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
+                    <img className="card-img-top" src={placeholder} alt="Card image cap" />
+                    <div className="card-body">
+                        <h5 className="card-title" key={product.id}>
+                            <hr></hr>
+                            <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
+                        </h5>
+                        <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+                    </div>
+                </div>
+            ))}
         </div>
     )
 }

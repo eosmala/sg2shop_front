@@ -29,7 +29,6 @@ export default function Tarjoukset({ url, category, addToCart }) {
         <div className="container">
             <h3>{category?.name}</h3>
             <p>Tarjoustuotteet</p>
-            <h3>Products for {category?.name}</h3>
             {products.map(product => (
                 <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <img className="card-img-top" src={placeholder} alt="Card image cap" />
