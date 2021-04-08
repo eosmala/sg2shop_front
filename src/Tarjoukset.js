@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React,  { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import placeholder from './img/logo.png';
 
 export default function Tarjoukset({ url, category, addToCart }) {
     const [products, setProducts] = useState([]);
 
-    const [cart, setCart] = useState([]);
-
-    useEffect(async () => {
+    useEffect(async() => {
         if (category !== null) {
             let address = '';
             if (category !== null) {
@@ -28,17 +27,18 @@ export default function Tarjoukset({ url, category, addToCart }) {
 
     return (
         <div className="container">
+            <h3>{category?.name}</h3>
             <p>Tarjoustuotteet</p>
             <h3>Products for {category?.name}</h3>
             {products.map(product => (
-                <div className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
+                <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <img className="card-img-top" src={placeholder} alt="Card image cap" />
                     <div className="card-body">
                         <h5 className="card-title" key={product.id}>
                             <hr></hr>
-                            <p>{product.name}</p>
+                            <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
                         </h5>
-                        <button type="button" className="btn btn-primary">Lisää ostoskoriin <i className="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                        <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                     </div>
                 </div>
             ))}
