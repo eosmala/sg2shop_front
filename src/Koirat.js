@@ -31,11 +31,12 @@ export default function Koirat({url, category, addToCart}) {
             <p>Koiran ruoat ja tarvikkeet</p>
             {products.map(product => (
                 <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
-                    <img className="card-img-top" src={placeholder} alt="Card image cap" />
+                    <img className="card-img-top" src={url + "products/img/" + product.image} alt="Tuote" />
                     <div className="card-body">
                         <h5 className="card-title" key={product.id}>
                             <hr></hr>
                             <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
+                            <span>{product.description}</span>
                         </h5>
                         <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
                     </div>
