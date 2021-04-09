@@ -35,7 +35,7 @@ export default function Koirat({url, category, addToCart}) {
                     <div className="card-body">
                         <h5 className="card-title" key={product.id}>
                             <hr></hr>
-                            <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link></p>
+                            <p><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link> {product.price} €</p>
                             <span>{product.description}</span>
                         </h5>
                         <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
