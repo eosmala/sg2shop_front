@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
-    .nav-link, #cart {
+    .nav-link, #cart, .card-title a {
         color: ${({ theme }) => theme.text }
     }
 
@@ -32,5 +32,9 @@ export const GlobalStyles = createGlobalStyle`
 
     .active {
         border-color: ${({ theme }) => theme.darkgreen };
+      }
+
+    .btn-card {
+        background-color: ${({ theme }) => theme.darkgreen };
       }
     `

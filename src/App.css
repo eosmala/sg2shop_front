@@ -85,6 +85,42 @@ i.fa.fa-heart-o:hover {
   transition: 0.4s;
 }
 
+#category-page h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#category-info {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-title p {
+  display: block;
+  height: 3rem;
+}
+
+.card-title a {
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+}
+
+.btn-card  {
+  border: 1px solid black;
+  color: #F1F2EB !important;
+}
+
+#product-info-page button {
+  font-weight: 500;
+}
+
+#product-info-page .card {
+  height: 558px;
+}
+
 i.fa.fa-facebook-square, i.fa.fa-instagram, 
 i.fa.fa-youtube-play, i.fa.fa-twitter {
     font-size: 36px;
