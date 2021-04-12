@@ -1,12 +1,12 @@
+body {
+  font-family: 'Averia Serif Libre', cursive;
+}
 
 h4,h3,h2,ul {
-  font-family: 'Averia Serif Libre', cursive;
   font-style: oblique;
-  
 }
 
 p {
-  font-family: 'Averia Serif Libre', cursive;
   font-size: medium!important;
   margin-bottom: 0rem!important;
 }
@@ -28,7 +28,6 @@ nav li a:hover {
   font-weight: bold;
   border: 3px;
   border-style: none none solid none;
-
 }
 
 
