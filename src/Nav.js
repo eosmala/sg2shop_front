@@ -1,25 +1,28 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
-import {NavLink} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
 
-export default function Nav({url, cart, setCategory}) {
+export default function Nav({ url, cart, setCategory }) {
     const [categories, setCategories] = useState([]);
-    
 
-    useEffect(async() => {
-        try {
-            const response = await fetch(url + 'products/getcategories.php');
-            const json = await response.json();
-            if (response.ok) {
-                setCategories(json);
-                setCategory(json[0]);
-            } else {
-                alert(json.error);
+
+    useEffect(() => {
+        async function categ() {
+            try {
+                const response = await fetch(url + 'products/getcategories.php');
+                const json = await response.json();
+                if (response.ok) {
+                    setCategories(json);
+                    setCategory(json[0]);
+                } else {
+                    alert(json.error);
+                }
+            } catch (error) {
+                alert(error);
             }
-        } catch (error) {
-            alert(error);
         }
+        categ();
     }, [])
 
 
@@ -35,9 +38,9 @@ export default function Nav({url, cart, setCategory}) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav m-auto">
-                    {categories.map(category => (
-                                <li key={category.id}>
-                                    <NavLink
+                        {categories.map(category => (
+                            <li key={category.id}>
+                                <NavLink
                                     activeClassName="active"
                                     className="nav-link text-decoration-none rounded"
                                     to={{
@@ -47,10 +50,10 @@ export default function Nav({url, cart, setCategory}) {
                                             name: category.name
                                         }
                                     }}
-                                    >{category.name}
-                                    </NavLink>
-                                    </li>
-                                ))}
+                                >{category.name}
+                                </NavLink>
+                            </li>
+                        ))}
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
