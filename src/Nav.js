@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import Cart from './Cart';
-
+import SearchBar from './SearchBar';
 export default function Nav({url, cart, setCategory}) {
     const [categories, setCategories] = useState([]);
     
@@ -51,6 +51,7 @@ export default function Nav({url, cart, setCategory}) {
                                     </NavLink>
                                     </li>
                                 ))}
+                                <SearchBar></SearchBar>
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">

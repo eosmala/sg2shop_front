@@ -10,6 +10,7 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
+import SearchResults from './SearchResults';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -69,6 +70,13 @@ function App() {
           />
           <Route path="/Tarjoukset" render={()=>
           <Tarjoukset
+           category={category}
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          <Route path="/SearchResults" render={()=>
+          <SearchResults
            category={category}
            addToCart={addToCart}
            url={URL} />}
