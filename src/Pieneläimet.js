@@ -5,24 +5,27 @@ import placeholder from './img/logo.png';
 export default function Pieneläimet({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
 
-    useEffect(async() => {
-        if (category !== null) {
-            let address = '';
+    useEffect(() => {
+        async function prod() {
             if (category !== null) {
-                address = url + 'products/getproducts.php/' + category?.id;
-            }
-            try {
-                const response = await fetch(address);
-                const json = await response.json();
-                if (response.ok) {
-                    setProducts(json);
-                } else {
-                    alert(json.error);
+                let address = '';
+                if (category !== null) {
+                    address = url + 'products/getproducts.php/' + category?.id;
                 }
-            } catch (error) {
-                alert(error);
+                try {
+                    const response = await fetch(address);
+                    const json = await response.json();
+                    if (response.ok) {
+                        setProducts(json);
+                    } else {
+                        alert(json.error);
+                    }
+                } catch (error) {
+                    alert(error);
+                }
             }
-            }
+        }
+        prod();
     }, [category])
 
     return (

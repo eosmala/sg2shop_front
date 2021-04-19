@@ -1,12 +1,12 @@
+body {
+  font-family: 'Averia Serif Libre', cursive;
+}
 
 h4,h3,h2,ul {
-  font-family: 'Averia Serif Libre', cursive;
   font-style: oblique;
-  
 }
 
 p {
-  font-family: 'Averia Serif Libre', cursive;
   font-size: medium!important;
   margin-bottom: 0rem!important;
 }
@@ -28,7 +28,6 @@ nav li a:hover {
   font-weight: bold;
   border: 3px;
   border-style: none none solid none;
-
 }
 
 
@@ -61,7 +60,7 @@ i.fa.fa-heart-o:hover {
   margin-right: 3px;
 }
 
-#cart {
+#cart, #login {
   text-decoration: none;
 }
 
@@ -77,6 +76,19 @@ i.fa.fa-heart-o:hover {
   vertical-align: top;
 }
 
+#cart button {
+  background-color: transparent;
+  border: none;
+}
+
+#login {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 0 4px;
+  vertical-align: top;
+  color: black;
+}
+
 .bar1, .bar2, .bar3 {
   width: 30px;
   height: 3px;
@@ -85,7 +97,7 @@ i.fa.fa-heart-o:hover {
   transition: 0.4s;
 }
 
-#category-page h3 {
+#category-page, #order-page h3 {
   text-align: center;
   font-weight: bold;
 }
