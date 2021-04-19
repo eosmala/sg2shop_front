@@ -2,8 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
+import Login from './Login';
 
-export default function Nav({ url, cart, setCategory, addToCart, emptyCart, removeFromCart, changeAmount }) {
+export default function Nav({ url, cart, setCategory, addToCart, emptyCart, removeFromCart, changeAmount, login }) {
     const [categories, setCategories] = useState([]);
 
 
@@ -37,7 +38,13 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                     </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ml-auto">
+                    <li>
+                            <Login login={login} />
+                        </li>
+                    </ul>
                     <ul className="navbar-nav m-auto">
+                    
                         {categories.map(category => (
                             <li key={category.id}>
                                 <NavLink
@@ -54,7 +61,9 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                                 </NavLink>
                             </li>
                         ))}
+                       
                     </ul>
+            
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Cart 

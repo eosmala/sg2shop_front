@@ -60,11 +60,7 @@ i.fa.fa-heart-o:hover {
   margin-right: 3px;
 }
 
-.fa-fa-trash {
-  font-size: 25px;
-}
-
-#cart {
+#cart, #login {
   text-decoration: none;
 }
 
@@ -83,6 +79,14 @@ i.fa.fa-heart-o:hover {
 #cart button {
   background-color: transparent;
   border: none;
+}
+
+#login {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 0 4px;
+  vertical-align: top;
+  color: black;
 }
 
 .bar1, .bar2, .bar3 {
