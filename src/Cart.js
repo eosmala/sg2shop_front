@@ -31,7 +31,7 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                                                     <h5>{product.name}</h5>
                                                 </Link>
                                                 <input
-                                                    className=""
+                                                    style={{ width: "60px" }}
                                                     type="number" step="1" min="1"
                                                     onChange={e => changeAmount(e, product, index)}
                                                     value={product.amount}

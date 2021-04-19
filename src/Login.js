@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 export default function Login() {
     return (
         
-        <Link classname="nav-link text-decoration-none rounded" id="login" to="/loginhere">
+        <Link className="nav-link text-decoration-none rounded" id="login" to="/loginhere">
          Login
         </Link>
 

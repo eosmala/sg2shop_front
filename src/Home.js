@@ -98,13 +98,6 @@ export default function Home({ url, category, addToCart }) {
             <section className="features-icons text-center">
                 <div className="container">
                     <div className="row">
-                        <h3>Products for {category?.name}</h3>
-                        {products.map(product => (
-                            <div key={product.id}>
-                                <p>{product.name}</p>
-                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
-                            </div>
-                        ))}
                         {/* <div className="col-lg-4">
                             <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <div className="features-icons-icon d-flex">
