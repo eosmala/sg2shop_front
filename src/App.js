@@ -10,6 +10,7 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
+import Order from './Order';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -36,7 +37,14 @@ function App() {
   return (
     <>
       <Header />
-      <Nav url={URL} cart={cart} setCategory={setCategory}/>
+      <Nav url={URL}
+      cart={cart} 
+      setCategory={setCategory}
+      addToCart={addToCart}
+      emptyCart={emptyCart}
+      removeFromCart={removeFromCart}
+      changeAmount={changeAmount}
+      />
       <div className="container">
         <Switch>
           <Route path="/" render={()=>
@@ -76,9 +84,19 @@ function App() {
           />
           <Route path="/product/:id" render={()=>
           <ProductInfo
-          addToCart={addToCart}
-          url={URL} />}
-          exact
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
+          <Route path="/Order" render={()=>
+          <Order
+           addToCart={addToCart}
+           emptyCart={emptyCart}
+           removeFromCart={removeFromCart}
+           changeAmount={changeAmount}
+           url={URL}
+           cart={cart} />}
+           exact
           />
 
         </Switch>
@@ -88,9 +106,39 @@ function App() {
   );
 
   function addToCart(product) {
-    const newCart = [...cart,product];
-    setCart(newCart);
-    localStorage.setItem('cart',JSON.stringify(newCart));
+    if (cart.some(item => item.id === product.id)) {
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) +1, product);
+    } else {
+      product["amount"] = 1;
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart',JSON.stringify(newCart));
+    }
+  }
+
+  function removeFromCart(product) {
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved);
+    localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+  }
+
+  function emptyCart() {
+    const emptyCart = [];
+    setCart(emptyCart);
+    localStorage.setItem('cart',JSON.stringify(emptyCart));
+  }
+
+  function updateAmount(amount, product) {
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id));
+    const modifiedCart = Object.assign([...cart],{[index]: product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart',JSON.stringify(modifiedCart));
+  }
+
+  function changeAmount(e, product, index) {
+    updateAmount(e.target.value, product);
   }
 }
 

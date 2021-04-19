@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
 
-export default function Nav({ url, cart, setCategory }) {
+export default function Nav({ url, cart, setCategory, addToCart, emptyCart, removeFromCart, changeAmount }) {
     const [categories, setCategories] = useState([]);
 
 
@@ -57,7 +57,14 @@ export default function Nav({ url, cart, setCategory }) {
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Cart cart={cart} />
+                            <Cart 
+                            url={url}
+                            cart={cart} 
+                            addToCart={addToCart}
+                            emptyCart={emptyCart}
+                            removeFromCart={removeFromCart}
+                            changeAmount={changeAmount}
+                            />
                         </li>
                     </ul>
                 </div>
