@@ -98,13 +98,6 @@ export default function Home({ url, category, addToCart }) {
             <section className="features-icons text-center">
                 <div className="container">
                     <div className="row">
-                        <h3>Products for {category?.name}</h3>
-                        {products.map(product => (
-                            <div key={product.id}>
-                                <p>{product.name}</p>
-                                <button className="btn" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
-                            </div>
-                        ))}
                         {/* <div className="col-lg-4">
                             <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <div className="features-icons-icon d-flex">
@@ -142,7 +135,120 @@ export default function Home({ url, category, addToCart }) {
                             <div className="card-body">
                                 <h4 className="card-title">Ruoka tuotteita</h4>
 
-                                <p className="card-text">placeholder</p>
+                                <div className="row row-cols-1 row-cols-md-2 g-4">
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp1} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Stuff</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3 ">
+                                            <img src={temp2} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Cat</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp3} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Dog </h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp4} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Yeet</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="card-footer">
                             </div>
@@ -152,6 +258,7 @@ export default function Home({ url, category, addToCart }) {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Suosituimmat tuotteet</h4>
+
                                 <div className="row row-cols-1 row-cols-md-2 g-4">
                                     <div className="col">
                                         <div className="card border-light mb-3">
@@ -276,7 +383,120 @@ export default function Home({ url, category, addToCart }) {
                         <div className="card h-100">
                             <div className="card-body">
                                 <h4 className="card-title">Leluja</h4>
-                                <p className="card-text">placeholder</p>
+                                <div className="row row-cols-1 row-cols-md-2 g-4">
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp1} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Stuff</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3 ">
+                                            <img src={temp2} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Cat</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp3} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Dog </h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card border-light mb-3">
+                                            <img src={temp4} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <div className="hearttest">
+                                                    <h5 className="card-title">Yeet</h5>
+                                                </div>
+
+                                                <div className="hearttest">
+                                                    <i className="fa fa-heart-o" aria-hidden="true"></i>
+                                                </div>
+                                                <br></br>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star" aria-hidden="true"></i>
+                                                <i className="fa fa-star-o" aria-hidden="true"></i>
+                                                <br></br>
+                                                <div className="hearttest">
+                                                    <p>20€</p>
+                                                </div>
+                                                <div className="hearttest">
+                                                    <button type="button" className="btn btn-success btn-sm">Osta</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="card-footer">
                                 <p></p>

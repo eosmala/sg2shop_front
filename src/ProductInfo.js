@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import temp1 from './img/placeholder.jpg'
 
 export default function ProductInfo({url, addToCart}) {
     const productId = useParams();
@@ -8,8 +7,7 @@ export default function ProductInfo({url, addToCart}) {
 
     useEffect(async() => {
         try {
-
-            const response = await fetch('http://localhost/sg2shop_back/products/getproductinfo.php/' + productId.id);
+            const response = await fetch(url + 'products/getproductinfo.php/' + productId.id);
             const json = await response.json();
             if (response.ok) {
                 setProductInfo(json);
