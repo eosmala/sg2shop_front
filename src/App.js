@@ -10,6 +10,8 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
+import Admin from './admin/Admin';
+import Aproducts from './admin/Aproducts';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -77,6 +79,16 @@ function App() {
           <Route path="/product/:id" render={()=>
           <ProductInfo
           addToCart={addToCart}
+          url={URL} />}
+          exact
+          />
+          <Route path="/admin" render={()=>
+          <Admin
+          url={URL} />}
+          exact
+          />
+          <Route path="/admin/aproducts" render={()=>
+          <Aproducts
           url={URL} />}
           exact
           />
