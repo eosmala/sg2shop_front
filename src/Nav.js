@@ -39,18 +39,18 @@ export default function Nav({ url, cart, setCategory }) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav m-auto">
                         {categories.map(category => (
-                            <li key={category.id}>
+                            <li key={category.category_id}>
                                 <NavLink
                                     activeClassName="active"
                                     className="nav-link text-decoration-none rounded"
                                     to={{
-                                        pathname: "/" + category.name,
+                                        pathname: "/" + category.category_name,
                                         state: {
-                                            id: category.id,
-                                            name: category.name
+                                            id: category.category_id,
+                                            name: category.category_name
                                         }
                                     }}
-                                >{category.name}
+                                >{category.category_name}
                                 </NavLink>
                             </li>
                         ))}
