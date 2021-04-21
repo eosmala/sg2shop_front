@@ -10,13 +10,10 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
-<<<<<<< HEAD
 import Admin from './admin/Admin';
 import Aproducts from './admin/Aproducts';
-=======
 import SearchResults from './SearchResults';
 import Order from './Order';
->>>>>>> e3976f2b2f337551d9302d42f1fb9859721af009
 
 function App() {
   const [category, setCategory] = useState(null);
