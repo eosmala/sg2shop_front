@@ -10,10 +10,11 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
-import Admin from './admin/Admin';
-import Aproducts from './admin/Aproducts';
+/*import Admin from './admin/Admin';
+import Aproducts from './admin/Aproducts'; */
 import SearchResults from './SearchResults';
 import Order from './Order';
+import Login from './Login';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -108,7 +109,7 @@ function App() {
            cart={cart} />}
            exact
           />
-          <Route path="/admin" render={()=>
+        {/* <Route path="/admin" render={()=>
           <Admin
           url={URL} />}
           exact
@@ -117,8 +118,8 @@ function App() {
           <Aproducts
           url={URL} />}
           exact
-          />
-
+          /> */}
+     <Route path="/Login" component={Login}/>
         </Switch>
       </div>
       <Footer />

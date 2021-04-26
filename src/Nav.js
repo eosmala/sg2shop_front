@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Cart from './Cart';
 import SearchBar from './SearchBar';
 import Login from './Login';
@@ -40,9 +40,9 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                    <li>
-                            <Login login={login} />
-                        </li>
+                     <li>
+                  <Link className="nav-link" to="/Login">Log in</Link>
+                  </ li>  
                     </ul>
                     <ul className="navbar-nav m-auto">
                     
