@@ -1,44 +1,73 @@
+import React,{useState} from 'react';
+import { useHistory } from 'react-router';
 
-import React from 'react';
-import {Link} from 'react-router-dom';
+export default function Login({setUser}) {
+ 
+   
+    
+  const [username, setUsername] = useState('');
+  const [password,setPassword] = useState('');
 
-export default function Login() {
+  let history = useHistory();
+
+  async function login(e) {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append('username',username);
+    formData.append('password',password);
+
+    const config = {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Accept' : 'application/json',
+      },
+      body: formData
+    }
+
+    const response = await fetch('http://localhost:3000/login.php',config);
+    const json = await response.json();
+
+    if (response.ok) {
+      setUser(json);
+      history.push('/');
+    } else {
+      alert("Error logging in.");
+    }
+
+  }
     return (
         
-        <Link className="nav-link text-decoration-none rounded" id="login" to="/loginhere">
-         Login
-        </Link>
-
-
-    )
-}
-
-
-/*import React from 'react'
-import {Link} from 'react-router-dom';
-
-
-
-
-export default function Login() {
-return (
-<div>
+        <div>
+           
     <h3>Login</h3>
 <form onSubmit={login}>
     <div>
         <label>Username</label>
         <input value={username} onChange={e => setUsername(e.target.value)}/>
     </div>
+    <br></br>
     <div>
         <label>Password</label>
-        <input type="password" value={password} onChange={e => setPassword(e.targer.value)}/>
+        <input value={password} onChange={e => setPassword(e.targer.value)}/>
     </div>
     <div>
         <button>Login</button>
     </div>
 </form>
-</div>
+</div> 
 
-)
 
-} */
+    )
+}
+
+
+
+
+
+
+
+
+
+
