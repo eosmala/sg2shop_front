@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default function Order({ url, cart, emptyCart, removeFromCart, changeAmount }) {
     return (
-        <div className="container-fluid" id="order-page">
-            <div className="row">
+        <div className="container" id="order-page">
+            <div className="row bg">
                 <h3 className="mt-1">Tilauksesi</h3>
                 {cart.map((product, index) => (
-                    <div className="row col-12 border-bottom" key={product.id + "cart"}>
-                        <Link className="col-4 col-lg-2 my-auto" to={{ pathname: "/product/" + product.id }}>
+                    <div className="row col-12 mx-0 mt-2 bg border-bottom" key={product.id + "cart"}>
+                        <Link className="col-4 col-lg-2 px-0 mb-2" to={{ pathname: "/product/" + product.id }}>
                             <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.name} />
                         </Link>
                         <div className="col-7 col-lg-9" >
-                            <div className="py-5">
+                            <div className="my-5">
                                 <Link to={{ pathname: "/product/" + product.id }}>
                                     <h5>{product.name}</h5>
                                 </Link>
@@ -24,9 +24,9 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
                                 ></input>
                             </div>
                         </div>
-                        <div className="col-1 py-5">
-                            <h5>{product.price} €</h5>
-                            <a href="#" onClick={() => removeFromCart(product)}><i className="fa fa-trash" aria-hidden="true"></i></a>
+                        <div className="col-1 my-5">
+                            <h5 className="mx-1">{product.price} €</h5>
+                            <a className="mx-3" href="#" onClick={() => removeFromCart(product)}><i className="fa fa-trash" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 ))}

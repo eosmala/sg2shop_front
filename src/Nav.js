@@ -40,12 +40,11 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                    <li>
+                        <li className="nav-item">
                             <Login login={login} />
                         </li>
                     </ul>
                     <ul className="navbar-nav m-auto">
-                    
                         {categories.map(category => (
                             <li key={category.id}>
                                 <NavLink
@@ -62,9 +61,12 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                                 </NavLink>
                             </li>
                         ))}
-                                <SearchBar></SearchBar>
                     </ul>
-            
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <SearchBar></SearchBar>
+                        </li>
+                    </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Cart 

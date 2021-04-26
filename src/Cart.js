@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmount }) {
     return (
-        <div id="cart">
-            <button id="cart" type="button" data-toggle="modal" data-target="#cartModal">
+        <div>
+            <button id="cart-icon" type="button" data-toggle="modal" data-target="#cartModal">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
                 <span>{cart.length}</span>
             </button>
@@ -13,15 +13,15 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h3 className="modal-title" id="cartModalLabel">Ostoskori</h3>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <h3 className="modal-title " id="cartModalLabel">Ostoskori</h3>
+                            <button type="button" className="close ml-auto" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">X</span>
                             </button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body pt-0">
                             <div className="row">
                                 {cart.map((product, index) => (
-                                    <div className="row col-12 border-bottom" key={product.id + "cart"}>
+                                    <div className="row col-12 border-bottom mx-auto mt-2" key={product.id + "cart"}>
                                         <Link className="col-4 col-lg-2 my-auto" to={{ pathname: "/product/" + product.id }}>
                                             <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.name} />
                                         </Link>
@@ -40,19 +40,22 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                                         </div>
                                         <div className="col-1">
                                             <h5>{product.price} €</h5>
-                                            <a href="#" onClick={() => removeFromCart(product)}><i className="fa fa-trash" aria-hidden="true"></i></a>
+                                            <a href="#" onClick={() => removeFromCart(product)}>
+                                                <h5>Poista <i className="fa fa-trash" aria-hidden="true"></i></h5>
+                                            </a>
                                         </div>
                                     </div>
                                 ))}
-                                <div className="col-12">
-                                    <h5>Tyhjennä ostoskori</h5>
-                                    <a href="#" onClick={() => emptyCart()}><i className="fa fa-trash" aria-hidden="true"></i></a>
+                                <div className="col-12 mt-3">
+                                    <a href="#" onClick={() => emptyCart()}>
+                                        <h5>Tyhjennä ostoskori <i className="fa fa-trash" aria-hidden="true"></i></h5>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Sulje</button>
-                            <Link to="/Order" className="btn btn-secondary">Jatka tilaamaan</Link>
+                            <button type="button" className="btn btn-card" data-dismiss="modal">Sulje</button>
+                            <Link to="/Order" className="btn btn-card">Jatka tilaamaan</Link>
                         </div>
                     </div>
                 </div>

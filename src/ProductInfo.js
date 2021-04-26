@@ -23,10 +23,10 @@ export default function ProductInfo({url, addToCart}) {
         <div className="container" id="product-info-page">
             {productInfo.map(product => (
             <div key={product.id} className="row">
-                <div className="col-6 card">
+                <div className="col-12 col-lg-6 card">
                     <img src={url + "products/img/" + product.image} className="img-fluid mw-100" alt={product.name} style={{ border: "1px solid black" }}/>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                     <div className="card" style={{ border: "1px solid black" }}>
                         <div className="card-header">
                             <h4>{product.name}</h4>

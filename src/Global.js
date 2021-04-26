@@ -5,13 +5,12 @@ export const GlobalStyles = createGlobalStyle`
         background: ${({ theme }) => theme.body };
         color: ${({ theme }) => theme.text }
     }
-    .card,
-    .btn {
+    .card, .btn, .modal-content, .modal-content a:hover {
         background: ${({ theme }) => theme.card };
         color: ${({ theme }) => theme.text }
     }
 
-    .nav-link, #cart, .card-title a {
+    .nav-link, #cart-icon, .card-title a, .modal-body a, #order-page a {
         color: ${({ theme }) => theme.text }
     }
 
@@ -23,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.darkgreen };
       }
 
-    #cart span{
+    #cart-icon span{
         background-color: ${({ theme }) => theme.body };
     }
     .bar1, .bar2, .bar3 {
@@ -34,7 +33,11 @@ export const GlobalStyles = createGlobalStyle`
         border-color: ${({ theme }) => theme.darkgreen };
       }
 
-    .btn-card {
+    .btn-card, .modal-footer a:hover {
         background-color: ${({ theme }) => theme.darkgreen };
       }
+
+    #order-page .bg {
+        background: ${({ theme }) => theme.card };
+    }
     `
