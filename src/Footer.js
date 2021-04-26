@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -26,14 +27,17 @@ export default function Footer() {
                     
                     <div className="col-lg-4">
                         
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.3118403037608!2d25.466435340423814!3d65.0611188886071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cd52c7bb803d%3A0x40f55b6d25f0d1db!2sOulun%20ammattikorkeakoulu!5e0!3m2!1sfi!2sfi!4v1616943535611!5m2!1sfi!2sfi"></iframe>
+                    <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1682.3118403037608!2d25.466435340423814!3d65.0611188886071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cd52c7bb803d%3A0x40f55b6d25f0d1db!2sOulun%20ammattikorkeakoulu!5e0!3m2!1sfi!2sfi!4v1616943535611!5m2!1sfi!2sfi"></iframe>
 
                     </div>
                 </div>
             </div>
         </footer>
-        <div className="copyright py-4 text-center">
-            <div className="container"><p className="fw-light fst-italic">Copyright © Elukoille Rojuja Oy 2021</p></div>
+        <div className="container copyright py-4 ">
+            <div className="text-center fw-light fst-italic"><p>Copyright © Elukoille Rojuja Oy 2021</p></div>
+            <div className="text-end">
+                    <Link to="/admin" className="text-decoration-none text-light">Admin</Link>
+            </div>
         </div>
     </div>  
     )
