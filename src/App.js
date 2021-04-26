@@ -10,8 +10,12 @@ import Nav from './Nav';
 import Tarjoukset from './Tarjoukset';
 import Pieneläimet from './Pieneläimet';
 import ProductInfo from './ProductInfo';
+/*import Admin from './admin/Admin';
+import Aproducts from './admin/Aproducts'; */
 import SearchResults from './SearchResults';
 import Order from './Order';
+import Login from './Login';
+import LikePage from './LikePage';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -107,12 +111,22 @@ function App() {
            exact
           />
           <Route path="/LikePage" render={()=>
-          <ProductInfo
+          <LikePage
            addToCart={addToCart}
            url={URL} />}
            exact
           />
-
+        {/* <Route path="/admin" render={()=>
+          <Admin
+          url={URL} />}
+          exact
+          />
+          <Route path="/admin/aproducts" render={()=>
+          <Aproducts
+          url={URL} />}
+          exact
+          /> */}
+     <Route path="/Login" component={Login}/>
         </Switch>
       </div>
       <Footer />

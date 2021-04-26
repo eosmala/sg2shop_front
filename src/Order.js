@@ -5,7 +5,7 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
     return (
         <div className="container-fluid" id="order-page">
             <div className="row">
-                <h3>Tilauksesi</h3>
+                <h3 className="mt-1">Tilauksesi</h3>
                 {cart.map((product, index) => (
                     <div className="row col-12 border-bottom" key={product.id + "cart"}>
                         <Link className="col-4 col-lg-2 my-auto" to={{ pathname: "/product/" + product.id }}>
@@ -17,7 +17,7 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
                                     <h5>{product.name}</h5>
                                 </Link>
                                 <input
-                                    className=""
+                                    style={{ width: "60px" }}
                                     type="number" step="1" min="1"
                                     onChange={e => changeAmount(e, product, index)}
                                     value={product.amount}

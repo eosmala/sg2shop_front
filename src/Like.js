@@ -2,13 +2,14 @@ import React, {useEffect, useState} from 'react'
 import ReactTooltip from 'react-tooltip';
 import { Link } from 'react-router-dom';
 
-export default function Like({ name }) {
 
-    const [likes, setLikes] = useState(["TESTILIKE"]);
+export default function Like({ name, id, price }) {
+
+    const [likes, setLikes] = useState([]);
     
     function handleClick() {
-        console.log(name);
         setLikes(likes => [...likes, name]);
+    
         return (
             <div>
                 <h3>dd</h3>
@@ -24,10 +25,11 @@ export default function Like({ name }) {
             <div className="d-inline-block">
             <ul>
             {likes.map(product => (
-                    <li>{product}</li>
+                    <li><Link to={{pathname: "/product/" + id}}>{name}</Link> {price} €</li>
                 ))}
             </ul>
             </div>
         </div>
     )
 };
+

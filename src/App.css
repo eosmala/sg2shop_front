@@ -97,7 +97,7 @@ i.fa.fa-heart-o:hover {
   transition: 0.4s;
 }
 
-#category-page, #order-page h3 {
+#category-page h3, #order-page h3 {
   text-align: center;
   font-weight: bold;
 }
