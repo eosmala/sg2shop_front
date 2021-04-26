@@ -16,6 +16,7 @@ import SearchResults from './SearchResults';
 import Order from './Order';
 import Login from './Login';
 import Addproduct from './admin/Addproduct';
+import LikePage from './LikePage';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -108,6 +109,13 @@ function App() {
            changeAmount={changeAmount}
            url={URL}
            cart={cart} />}
+           exact
+          />
+        
+          <Route path="/LikePage" render={()=>
+          <LikePage
+           addToCart={addToCart}
+           url={URL} />}
            exact
           />
         <Route path="/admin" render={()=>

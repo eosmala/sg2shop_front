@@ -10,7 +10,6 @@ export default function SearchResults({addToCart}) {
  
 
     useEffect(async() => {
-        
             try {
                 const address = url + 'products/search.php' + location.search;
                 console.log(address);
@@ -18,10 +17,6 @@ export default function SearchResults({addToCart}) {
                 let json = await response.json();
                 if (response.ok) {
                     setResults(json);
-                    console.log("result", results);
-                    
-                    
-                    
                 } else {
                     alert(json.error);
                 }
@@ -46,11 +41,11 @@ export default function SearchResults({addToCart}) {
                     <div key={result.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <Link to={{pathname: "/product/" + result.id}}><img className="card-img-top" src={url + "products/img/" + result.image} alt={result.name} /></Link>
                     <div className="card-body">
-                        <h5 className="card-title" key={result.id}>
+                        <div className="card-title" key={result.id}>
                             <hr></hr>
                             <h5><Link to={{pathname: "/product/" + result.id}}>{result.name}</Link> {result.price} €</h5>
                             <p>{result.description}</p>
-                        </h5>
+                        </div>
                         <button className="btn btn-card" type="button" onClick={e => addToCart(result)}>Lisää ostoskoriin</button>
                     </div>
                     </div>
