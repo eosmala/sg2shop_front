@@ -106,6 +106,12 @@ function App() {
            cart={cart} />}
            exact
           />
+          <Route path="/LikePage" render={()=>
+          <ProductInfo
+           addToCart={addToCart}
+           url={URL} />}
+           exact
+          />
 
         </Switch>
       </div>

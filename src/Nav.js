@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
 import SearchBar from './SearchBar';
 import Login from './Login';
+import LikePage from './LikePage';
 
 export default function Nav({ url, cart, setCategory, addToCart, emptyCart, removeFromCart, changeAmount, login }) {
     const [categories, setCategories] = useState([]);

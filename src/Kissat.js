@@ -1,10 +1,11 @@
 import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import placeholder from './img/logo.png';
-
+import Like from './Like';
+import likes from './Like';
 export default function Kissat({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
-
+    console.log("laiks array:", likes)
     useEffect(() => {
         async function prod() {
             if (category !== null) {
@@ -40,8 +41,10 @@ export default function Kissat({url, category, addToCart}) {
                             <hr></hr>
                             <h5><Link to={{pathname: "/product/" + product.id}}>{product.name}</Link> {product.price} €</h5>
                             <p>{product.description}</p>
+                            <p>Varastossa: {product.stock_amount} kpl</p>
                         </h5>
                         <button className="btn btn-card" type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+                        <Like name={product.name}/>
                     </div>
                 </div>
             ))}
