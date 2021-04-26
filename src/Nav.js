@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
 import SearchBar from './SearchBar';
 import Login from './Login';
@@ -41,25 +41,25 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                     <li>
-                  <Link className="nav-link" to="/Login">Log in</Link>
-                  </ li>  
+                    <li>
+                            <Login login={login} />
+                        </li>
                     </ul>
                     <ul className="navbar-nav m-auto">
                     
                         {categories.map(category => (
-                            <li key={category.category_id}>
+                            <li key={category.id}>
                                 <NavLink
                                     activeClassName="active"
                                     className="nav-link text-decoration-none rounded"
                                     to={{
-                                        pathname: "/" + category.category_name,
+                                        pathname: "/" + category.name,
                                         state: {
-                                            id: category.category_id,
-                                            name: category.category_name
+                                            id: category.id,
+                                            name: category.name
                                         }
                                     }}
-                                >{category.category_name}
+                                >{category.name}
                                 </NavLink>
                             </li>
                         ))}

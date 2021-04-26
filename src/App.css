@@ -60,15 +60,11 @@ i.fa.fa-heart-o:hover {
   margin-right: 3px;
 }
 
-#cart, #login {
+#cart-icon, #login {
   text-decoration: none;
 }
 
-#cart:hover {
-  background-color: transparent;
-}
-
-#cart span {
+#cart-icon span {
   font-weight: bold;
   font-size: 15px;
   border-radius: 10px;
@@ -76,7 +72,7 @@ i.fa.fa-heart-o:hover {
   vertical-align: top;
 }
 
-#cart button {
+#cart-icon {
   background-color: transparent;
   border: none;
 }
@@ -86,7 +82,6 @@ i.fa.fa-heart-o:hover {
   border-radius: 10px;
   padding: 0 4px;
   vertical-align: top;
-  color: black;
 }
 
 .bar1, .bar2, .bar3 {
@@ -112,11 +107,11 @@ i.fa.fa-heart-o:hover {
   height: 3rem;
 }
 
-.card-title a {
+.card-title a, .modal-body a, #order-page a {
   text-decoration: none;
 }
 
-.card-title a:hover {
+.card-title a:hover, .modal-body a:hover, #order-page a:hover {
   text-decoration: underline;
 }
 
@@ -130,7 +125,7 @@ i.fa.fa-heart-o:hover {
 }
 
 #product-info-page .card {
-  height: 558px;
+  height: 100%;
 }
 
 i.fa.fa-facebook-square, i.fa.fa-instagram, 
@@ -150,4 +145,15 @@ i.fa.fa-youtube-play, i.fa.fa-twitter {
 
 .fa-heart:hover {
   color: red;
+}
+#cartModalLabel {
+  font-weight: bold;
+}
+
+#order-page .bg {
+  border-radius: 4px;
+}
+
+.fa-trash {
+  font-size: 25px;
 }
