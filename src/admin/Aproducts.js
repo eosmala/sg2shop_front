@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 export default function Aproducts ({ url }) {
   const [products, setProducts] = useState([])
-  const [productname, setProductname] = useState('')
+ // const [productname, setProductname] = useState('')
  // const [productId, setProductId] = useState('')
 
   useEffect(() => {
-    async function prod () {
+    async function prod() {
       try {
         const address = url + 'admin/getproducts.php'
         const response = await fetch(address)
@@ -23,10 +23,36 @@ export default function Aproducts ({ url }) {
       }
     }
     prod()
-  }, [url])
+  }, [url, products])
 
   function remove(id){
-    console.log(id)
+    let status = 0
+    fetch(url + 'admin/deleteproduct.php', {
+      method: 'POST',
+      headers: {
+        Accept: 'application(json)',
+        'Content-type': 'application(json)'
+      },
+      body: JSON.stringify({
+        product_id: id
+      })
+    })
+      .then(res => {
+        status = parseInt(res.status)
+        return res.json()
+      })
+      .then(
+        res => {
+          if (status === 200) {
+           alert("poistaminen onnistui");
+          } else {
+            alert(res.error)
+          }
+        },
+        error => {
+          alert(error)
+        }
+      )
     
   }
 
