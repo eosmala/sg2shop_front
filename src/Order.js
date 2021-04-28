@@ -7,14 +7,14 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
             <div className="row bg">
                 <h3 className="mt-1">Tilauksesi</h3>
                 {cart.map((product, index) => (
-                    <div className="row col-12 mx-0 mt-2 bg border-bottom" key={product.id + "cart"}>
-                        <Link className="col-4 col-lg-2 px-0 mb-2" to={{ pathname: "/product/" + product.id }}>
-                            <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.name} />
+                    <div className="row col-12 mx-0 mt-2 bg border-bottom" key={product.product_id + "cart"}>
+                        <Link className="col-4 col-lg-2 px-0 mb-2" to={{ pathname: "/product/" + product.product_id }}>
+                            <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.product_name} />
                         </Link>
                         <div className="col-7 col-lg-9" >
                             <div className="my-5">
-                                <Link to={{ pathname: "/product/" + product.id }}>
-                                    <h5>{product.name}</h5>
+                                <Link to={{ pathname: "/product/" + product.product_id }}>
+                                    <h5>{product.product_name}</h5>
                                 </Link>
                                 <input
                                     style={{ width: "60px" }}

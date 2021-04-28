@@ -14,9 +14,10 @@ import Admin from './admin/Admin';
 import Aproducts from './admin/Aproducts'; 
 import SearchResults from './SearchResults';
 import Order from './Order';
-import Login from './Login';
+import Login from './login/LoginMain';
 import Addproduct from './admin/Addproduct';
 import LikePage from './LikePage';
+import Register from './Register';
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -139,6 +140,7 @@ function App() {
           exact
           />
      <Route path="/Login" component={Login}/>
+     <Route path="/Register" component={Register}/>
         </Switch>
       </div>
       <Footer />
