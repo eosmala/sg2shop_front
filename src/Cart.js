@@ -21,14 +21,14 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                         <div className="modal-body pt-0">
                             <div className="row">
                                 {cart.map((product, index) => (
-                                    <div className="row col-12 border-bottom mx-auto mt-2" key={product.id + "cart"}>
-                                        <Link className="col-4 col-lg-2 my-auto" to={{ pathname: "/product/" + product.id }}>
-                                            <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.name} />
+                                    <div className="row col-12 border-bottom mx-auto mt-2" key={product.product_id + "cart"}>
+                                        <Link className="col-4 col-lg-2 my-auto" to={{ pathname: "/product/" + product.product_id }}>
+                                            <img className="img-thumbnail img-fluid" src={url + "products/img/" + product.image} alt={product.product_name} />
                                         </Link>
                                         <div className="col-7 col-lg-9" >
                                             <div>
-                                                <Link to={{ pathname: "/product/" + product.id }}>
-                                                    <h5>{product.name}</h5>
+                                                <Link to={{ pathname: "/product/" + product.product_id }}>
+                                                    <h5>{product.product_name}</h5>
                                                 </Link>
                                                 <input
                                                     style={{ width: "60px" }}
