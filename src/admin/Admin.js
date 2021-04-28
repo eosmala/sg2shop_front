@@ -10,10 +10,10 @@ export default function Admin({ url }) {
     return (
         <>
 
-            <div className="container" >
+            <div className="container my-3" >
                 <h3>Products</h3>
-                <Link className="btn" to="/admin/aproducts" >Selaa tuotteita</Link>
-                <Link className="btn" to="/admin/addproduct" >Lisää tuote</Link>
+                <Link className="btn mx-2" to="/admin/aproducts" >Selaa tuotteita</Link>
+                <Link className="btn mx-2" to="/admin/addproduct" >Lisää tuote</Link>
             </div>
         </>
     )
