@@ -133,6 +133,11 @@ function App() {
           url={URL} />}
           exact
           />
+          <Route path="/LikePage" render={()=>
+          <Admin
+          url={URL} />}
+          exact
+          />
      <Route path="/Login" component={Login}/>
         </Switch>
       </div>

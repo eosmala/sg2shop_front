@@ -2,14 +2,18 @@ import React, {useEffect, useState} from 'react'
 import ReactTooltip from 'react-tooltip';
 import { Link } from 'react-router-dom';
 
-export const likeArray = [];
-export default function Like({ name, id, price }) {
 
+export default function Like({ name, id, price }) {
     const [likes, setLikes] = useState([]);
     
-    function handleClick() {
-        setLikes(likes => [...likes, name]);
-        likeArray.push(likes);
+    const handleClick = () => {
+       
+            setLikes(likes => [...likes, name]);
+        
+            
+        localStorage.setItem("likes", JSON.stringify(likes));
+        
+        console.log((likes));
         return (
             <div>
                 <h3>dd</h3>

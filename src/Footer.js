@@ -37,6 +37,7 @@ export default function Footer() {
             <div className="text-center fw-light fst-italic"><p>Copyright © Elukoille Rojuja Oy 2021</p></div>
             <div className="text-end">
                     <Link to="/admin" className="text-decoration-none text-light">Admin</Link>
+                    <Link to="/LikePage" className="text-decoration-none text-light p-2">Suosikit</Link>
             </div>
         </div>
     </div>  
