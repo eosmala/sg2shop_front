@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Cart from './Cart';
 import SearchBar from './SearchBar';
-import Login from './login/LoginMain';
-import LikePage from './LikePage';
-import Register from './Register';
+
 
 export default function Nav({ url, cart, setCategory, addToCart, emptyCart, removeFromCart, changeAmount, login }) {
     const [categories, setCategories] = useState([]);
@@ -42,17 +40,16 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                    <li>
-                    <Link className="nav-link" to="/login/LoginMain">Log in</Link>
+                        <li>
+                            <Link className="nav-link" to="/login/LoginMain">Log in</Link>
                         </li>
-                    </ul>
-                    <ul className="navbar-nav ml-auto">
+
                         <li>
                             <Link className="nav-link" to="/Register">Register</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav m-auto">
-                    
+
                         {categories.map(category => (
                             <li key={category.category_id}>
                                 <NavLink
@@ -69,18 +66,18 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                                 </NavLink>
                             </li>
                         ))}
-                                <SearchBar></SearchBar>
+                        <SearchBar />
                     </ul>
-            
+
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Cart 
-                            url={url}
-                            cart={cart} 
-                            addToCart={addToCart}
-                            emptyCart={emptyCart}
-                            removeFromCart={removeFromCart}
-                            changeAmount={changeAmount}
+                            <Cart
+                                url={url}
+                                cart={cart}
+                                addToCart={addToCart}
+                                emptyCart={emptyCart}
+                                removeFromCart={removeFromCart}
+                                changeAmount={changeAmount}
                             />
                         </li>
                     </ul>
