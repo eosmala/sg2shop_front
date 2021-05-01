@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 export default function Aproducts ({ url }) {
   const [products, setProducts] = useState([])
- // const [productname, setProductname] = useState('')
- // const [productId, setProductId] = useState('')
+  // const [productname, setProductname] = useState('')
+  // const [productId, setProductId] = useState('')
 
   useEffect(() => {
-    async function prod() {
+    async function prod () {
       try {
         const address = url + 'admin/getproducts.php'
         const response = await fetch(address)
@@ -25,7 +25,7 @@ export default function Aproducts ({ url }) {
     prod()
   }, [url, products])
 
-  function remove(id){
+  function remove (id) {
     let status = 0
     fetch(url + 'admin/deleteproduct.php', {
       method: 'POST',
@@ -44,7 +44,7 @@ export default function Aproducts ({ url }) {
       .then(
         res => {
           if (status === 200) {
-           alert("poistaminen onnistui");
+            alert('poistaminen onnistui')
           } else {
             alert(res.error)
           }
@@ -53,7 +53,6 @@ export default function Aproducts ({ url }) {
           alert(error)
         }
       )
-    
   }
 
   return (
@@ -77,7 +76,7 @@ export default function Aproducts ({ url }) {
             <p>Varastossa: {product.stock_amount} kpl</p>
             <p>Kategoria: {product.category_name}</p>
             <p>
-              <button
+              {/* <button
                 className='btn m-2'
                 type='button'
                 // data-toggle='collapse'
@@ -87,9 +86,23 @@ export default function Aproducts ({ url }) {
                 // onClick={'setProductname({product.product_name})'}
               >
                 muokkaa
-              </button> 
-              <button className='btn m-2' 
-              value={`${product.product_id}`} onClick={e => remove(e.target.value)} 
+              </button>  */}
+              <Link
+                className='btn'
+                to={{
+                  pathname: '/admin/editproduct',
+                  state: {
+                    id: product.product_id,
+                    product_name: product.product_name
+                  }
+                }}
+              >
+                muokkaa
+              </Link>
+              <button
+                className='btn m-2'
+                value={`${product.product_id}`}
+                onClick={e => remove(e.target.value)}
               >
                 poista
               </button>
