@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
-export default function Editproduct({url, product_name, product_id}) {
+export default function Editproduct({url, prod_id, prod_name, prod_desc, prod_price, prod_stock, prod_cat}) {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
   const [stock, setStock] = useState('')
-  const [category, setCategory] = useState(1)
+  const [category, setCategory] = useState('')
+  const [id, setId] = useState('')
 
   useEffect(() => {
-      setName(product_name)
-
+      setName(prod_name)
+      setId(prod_id)
+      setDescription(prod_desc)
+      setPrice(prod_price)
+      setStock(prod_stock)
+      setCategory(prod_cat)
   }, [])
-
- 
-
 
   function save(e) {
     e.preventDefault()
@@ -26,6 +27,7 @@ export default function Editproduct({url, product_name, product_id}) {
         'Content-type': 'application(json)'
       },
       body: JSON.stringify({
+        product_id: id,
         product_name: name,
         price: price,
         stock_amount: stock,
@@ -40,7 +42,8 @@ export default function Editproduct({url, product_name, product_id}) {
       .then(
         res => {
           if (status === 200) {
-           alert("muokkaus onnistui")
+              alert("Muokkaus onnistui, voit sulkea muokkaus ikkunan")
+            
           } else {
             alert(res.error)
           }
@@ -56,10 +59,10 @@ export default function Editproduct({url, product_name, product_id}) {
       <h4>Muokkaa tuotetta</h4>
       <form onSubmit={save}>
         <div className='form-group row'>
-          <label for='nimi' className='col-sm-2 col-form-label'>
+          <label for='nimi' className='col-sm-3 col-form-label'>
             Tuotenimi
           </label>
-          <div className='col-sm-10'>
+          <div className='col-sm-9'>
             <input
               type='text'
               id='nimi'
@@ -70,8 +73,8 @@ export default function Editproduct({url, product_name, product_id}) {
           </div>
         </div>
         <div className='form-group row'>
-          <label for="description" className='col-sm-2 col-form-label'>Kuvaus</label>
-          <div className='col-sm-10'>
+          <label for="description" className='col-sm-3 col-form-label'>Kuvaus</label>
+          <div className='col-sm-9'>
             <input
               type='text'
               id="description"
@@ -82,8 +85,8 @@ export default function Editproduct({url, product_name, product_id}) {
           </div>
         </div>
         <div className='form-group row'>
-          <label for="price" className='col-sm-2 col-form-label'>Hinta</label>
-          <div className='col-sm-10'>
+          <label for="price" className='col-sm-3 col-form-label'>Hinta</label>
+          <div className='col-sm-9'>
             <input
               type='number'
               id='price'
@@ -94,8 +97,8 @@ export default function Editproduct({url, product_name, product_id}) {
           </div>
         </div>
         <div className='form-group row'>
-          <label for="stock" className='col-sm-2 col-form-label'>Varastomäärä</label>
-          <div className='col-sm-10'>
+          <label for="stock" className='col-sm-3 col-form-label'>Varastomäärä</label>
+          <div className='col-sm-9'>
             <input
               type='number'
               id="stock"
@@ -106,8 +109,8 @@ export default function Editproduct({url, product_name, product_id}) {
           </div>
         </div>
         <div className='form-group row'>
-          <label className='col-sm-2 col-form-label'>Tuoteryhmä</label>
-          <div className='col-sm-10'>
+          <label className='col-sm-3 col-form-label'>Tuoteryhmä</label>
+          <div className='col-sm-9'>
             <select
               className='form-control'
               id='select'
@@ -122,17 +125,24 @@ export default function Editproduct({url, product_name, product_id}) {
           </div>
         </div>
         <div className='form-group row'>
-          <label for='tiedosto' className='col-sm-2 col-form-label'>
+          <label for='tiedosto' className='col-sm-3 col-form-label'>
             Kuva
           </label>
-          <div className='col-sm-10'>
+          <div className='col-sm-9'>
             <input type='file' class='form-control-file' id='tiedosto' />
           </div>
         </div>
         <div className='form-group text-right'>
-          <Link className='btn mx-2' to='/admin/aproducts'>
-            Hylkää
-          </Link>
+            <button
+                className='btn m-2'
+                type='button'
+                data-toggle='collapse'
+                data-target={`#collapse${id}`}
+                aria-expanded='false'
+                aria-controls='collapse'
+              >
+                Sulje muokkaus
+              </button> 
           <button type='submit' className='btn mx-2'>
             Tallenna
           </button>

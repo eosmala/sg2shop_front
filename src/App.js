@@ -18,7 +18,7 @@ import Login from './login/LoginMain';
 import Addproduct from './admin/Addproduct';
 import LikePage from './LikePage';
 import Register from './Register';
-import Editproduct from './admin/Editproduct';
+
 
 function App() {
   const [category, setCategory] = useState(null);
@@ -135,10 +135,6 @@ function App() {
           url={URL} />}
           exact
           />
-          <Route path="/admin/editproduct" render={()=>
-          <Editproduct
-          url={URL} />}
-          exact/>
 
      <Route path="/Login" component={Login}/>
      <Route path="/Register" component={Register}/>

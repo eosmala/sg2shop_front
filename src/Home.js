@@ -8,31 +8,31 @@ import temp5 from './img/Temp5.jpg'
 import temp6 from './img/Temp6.jpg'
 
 export default function Home({ url, category, addToCart }) {
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     // console.log("kategoria on " + category)
 
-    useEffect(() => {
-        async function prod() {
-            if (category !== null) {
-                let address = '';
-                if (category !== null) {
-                    address = url + 'products/getproducts.php/' + category?.id;
-                }
-                try {
-                    const response = await fetch(address);
-                    const json = await response.json();
-                    if (response.ok) {
-                        setProducts(json);
-                    } else {
-                        alert(json.error);
-                    }
-                } catch (error) {
-                    alert(error);
-                }
-            }
-        }
-        prod();
-    }, [category])
+    // useEffect(() => {
+    //     async function prod() {
+    //         if (category !== null) {
+    //             let address = '';
+    //             if (category !== null) {
+    //                 address = url + 'products/getproducts.php/' + category?.id;
+    //             }
+    //             try {
+    //                 const response = await fetch(address);
+    //                 const json = await response.json();
+    //                 if (response.ok) {
+    //                     setProducts(json);
+    //                 } else {
+    //                     alert(json.error);
+    //                 }
+    //             } catch (error) {
+    //                 alert(error);
+    //             }
+    //         }
+    //     }
+    //     prod();
+    // }, [category])
 
     return (
         <div>
