@@ -25,7 +25,7 @@ export default function SearchResults({addToCart}) {
             }
         }
         prod();
-        }, [])
+        }, [results])
 
         // jos ei hakutuloksia näytä tämä
         if (results.length === 0) {
