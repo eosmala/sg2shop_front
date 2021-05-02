@@ -38,12 +38,12 @@ export default function SearchResults({addToCart}) {
             <h3>Hakutulokset</h3>
             <ul>
                 {results.map(result => (
-                    <div key={result.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
-                    <Link to={{pathname: "/product/" + result.id}}><img className="card-img-top" src={url + "products/img/" + result.image} alt={result.name} /></Link>
+                    <div key={result.product_id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
+                    <Link to={{pathname: "/product/" + result.product_id}}><img className="card-img-top" src={url + "products/img/" + result.image} alt={result.product_name} /></Link>
                     <div className="card-body">
-                        <div className="card-title" key={result.id}>
+                        <div className="card-title" key={result.product_id}>
                             <hr></hr>
-                            <h5><Link to={{pathname: "/product/" + result.id}}>{result.name}</Link> {result.price} €</h5>
+                            <h5><Link to={{pathname: "/product/" + result.product_id}}>{result.product_name}</Link> {result.price} €</h5>
                             <p>{result.description}</p>
                         </div>
                         <button className="btn btn-card" type="button" onClick={e => addToCart(result)}>Lisää ostoskoriin</button>

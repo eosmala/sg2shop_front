@@ -2,11 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmount }) {
+    let cartTotal = {
+        cart
+    },
+        sum = 0,
+        i;
+    for (i = 0; i < cart.length; i++) {
+        sum += cart[i].amount;
+    }
+
     return (
         <div>
             <button id="cart-icon" type="button" data-toggle="modal" data-target="#cartModal">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span>{cart.length}</span>
+                <span>{sum}</span>
             </button>
 
             <div className="modal fade" id="cartModal" tabIndex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -32,7 +41,7 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                                                 </Link>
                                                 <input
                                                     style={{ width: "60px" }}
-                                                    type="number" step="1" min="1"
+                                                    type="number" step="1" min="1" max={product.stock_amount}
                                                     onChange={e => changeAmount(e, product, index)}
                                                     value={product.amount}
                                                 ></input>
@@ -40,16 +49,16 @@ export default function Cart({ cart, url, emptyCart, removeFromCart, changeAmoun
                                         </div>
                                         <div className="col-1">
                                             <h5>{product.price} €</h5>
-                                            <a href="#" onClick={() => removeFromCart(product)}>
+                                            <button onClick={() => removeFromCart(product)}>
                                                 <h5>Poista <i className="fa fa-trash" aria-hidden="true"></i></h5>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 ))}
                                 <div className="col-12 mt-3">
-                                    <a href="#" onClick={() => emptyCart()}>
+                                    <button onClick={() => emptyCart()}>
                                         <h5>Tyhjennä ostoskori <i className="fa fa-trash" aria-hidden="true"></i></h5>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

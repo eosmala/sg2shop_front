@@ -41,11 +41,11 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li>
-                            <Link className="nav-link" to="/login/LoginMain">Log in</Link>
+                            <Link className="nav-link text-decoration-none rounded" to="/login/LoginMain">Log in</Link>
                         </li>
 
                         <li>
-                            <Link className="nav-link" to="/Register">Register</Link>
+                            <Link className="nav-link text-decoration-none rounded" to="/Register">Register</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav m-auto">

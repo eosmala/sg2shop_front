@@ -111,6 +111,11 @@ i.fa.fa-heart-o:hover {
   text-decoration: none;
 }
 
+#order-page .trash, .modal-body button {
+  border: none;
+  background: transparent;
+}
+
 .card-title a:hover, .modal-body a:hover, #order-page a:hover {
   text-decoration: underline;
 }
