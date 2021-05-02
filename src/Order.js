@@ -15,11 +15,12 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
 
     function order(e) {
         e.preventDefault();
-        fetch(url + 'order/add.php',{
+        let status = 0
+        fetch(url + 'order/add.php', {
             method: 'POST',
-            header: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+            headers: {
+                Accept: 'application(json)',
+                'Content-type': 'application(json)'
             },
             body: JSON.stringify({
                 firstName: firstName,
@@ -33,13 +34,18 @@ export default function Order({ url, cart, emptyCart, removeFromCart, changeAmou
             })
         })
         .then (res => {
+            status = parseInt(res.status)
           return res.json();
         })
         .then (
             (res) => {
+                if (status === 200) {
                 console.log(res);
                 emptyCart();
                 setFinished(true);
+            } else {
+                alert(res.error)
+              }
             }, (error) => {
                 alert(error);
             }
