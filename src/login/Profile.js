@@ -3,15 +3,20 @@ import {Link} from 'react-router-dom';
 
 export default function Profile() {
     const [userInfo, setInfo] = useState([]);
-
+    const [likes, setLikes] = useState([]);
     useEffect(() => {
         async function user() {
             try {
                 const response = await fetch("http://localhost/sg2shop_back/register/customerinfo.php")
                 const json = await response.json();
-
+                const getLikes = JSON.parse(localStorage.getItem("likes"));
+                if (getLikes.length > 0) {
+                    setLikes(getLikes);
+                }
+                console.log(likes);
                 if (response.ok) {
                     setInfo(json);
+                  
                 } else {
                     alert(json.error);
                 }
@@ -21,7 +26,9 @@ export default function Profile() {
         }
         user()
     },[])
+    
 
+   
     return (
         <div className="container">
             <h3>Käyttäjätiedot</h3>
@@ -74,7 +81,10 @@ export default function Profile() {
                 <Link to="/Editprofile">Muokkaa</Link>
             </div>
             <div>
-                <h3>Likes</h3>
+                <h3>Suosikit</h3>
+                {likes.map(product => (
+                    <li>{product}</li>
+                ))}
             </div>
             
         </div>
