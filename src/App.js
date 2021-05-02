@@ -16,7 +16,6 @@ import SearchResults from './SearchResults';
 import Order from './Order';
 import Login from './login/LoginMain';
 import Addproduct from './admin/Addproduct';
-import LikePage from './LikePage';
 import Register from './Register';
 import Editprofile from './EditProfile';
 
@@ -110,12 +109,6 @@ function App() {
            changeAmount={changeAmount}
            url={URL}
            cart={cart} />}
-           exact
-          />
-          <Route path="/LikePage" render={()=>
-          <LikePage
-           addToCart={addToCart}
-           url={URL} />}
            exact
           />
         <Route path="/admin" render={()=>
