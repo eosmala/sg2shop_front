@@ -6,7 +6,7 @@ export default function SearchBar() {
     const [criteria,setCriteria] = useState('');
 
     function doSearch(e) {
-        e.preventDefault();
+        window.location.reload();
     }
 
     return (
