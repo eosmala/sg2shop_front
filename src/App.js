@@ -167,7 +167,7 @@ function App() {
   }
 
   function updateAmount(amount, product) {
-    product.amount = amount;
+    product.amount = parseInt(amount);
     const index = cart.findIndex((item => item.product_id === product.product_id));
     const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);

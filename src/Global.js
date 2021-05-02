@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text }
     }
 
-    .nav-link, #cart-icon, .card-title a, .modal-body a, #order-page a {
+    .nav-link, #cart-icon, .card-title a, .modal-body a, #order-page a, #order-page button, .modal-body button {
         color: ${({ theme }) => theme.text }
     }
 
