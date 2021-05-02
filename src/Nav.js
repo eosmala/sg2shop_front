@@ -39,15 +39,7 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                     </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
-                        <li>
-                            <Link className="nav-link" to="/login/LoginMain">Log in</Link>
-                        </li>
 
-                        <li>
-                            <Link className="nav-link" to="/Register">Register</Link>
-                        </li>
-                    </ul>
                     <ul className="navbar-nav m-auto">
 
                         {categories.map(category => (
@@ -68,7 +60,11 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                         ))}
                         <SearchBar />
                     </ul>
-
+                    <ul className="navbar-nav ml-auto">
+                        <li>
+                            <Link className="nav-link" to="/login/LoginMain">Login</Link>
+                        </li>
+                    </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Cart
