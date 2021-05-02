@@ -18,6 +18,7 @@ import Login from './login/LoginMain';
 import Addproduct from './admin/Addproduct';
 import LikePage from './LikePage';
 import Register from './Register';
+import Editprofile from './EditProfile';
 
 const URL = "http://localhost/sg2shop_back/"
 
@@ -134,6 +135,7 @@ function App() {
           />
      <Route path="/Login" component={Login}/>
      <Route path="/Register" component={Register}/>
+     <Route path="/Editprofile" component={Editprofile}/>
         </Switch>
       </div>
       <Footer />

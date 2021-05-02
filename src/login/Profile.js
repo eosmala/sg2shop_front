@@ -70,10 +70,13 @@ export default function Profile() {
                     <li>Puhelin: {customer.phonenumber}</li>
                 ))}
             </ul>
-
+            <div>
+                <Link to="/Editprofile">Muokkaa</Link>
+            </div>
             <div>
                 <h3>Likes</h3>
             </div>
+            
         </div>
         )
     }
