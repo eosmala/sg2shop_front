@@ -19,19 +19,18 @@ import Addproduct from './admin/Addproduct';
 import LikePage from './LikePage';
 import Register from './Register';
 
+const URL = "http://localhost/sg2shop_back/"
 
 function App() {
   const [category, setCategory] = useState(null);
   const [cart, setCart] = useState([]);
 
-  const URL = "http://localhost/sg2shop_back/"
-
   let location = useLocation();
   
  useEffect(() => {
-  
-    if(location.state !==undefined) {
-      setCategory({id: location.state.id,name: location.state.name});
+    if(location.state !== undefined) {
+      setCategory({id: location.state.id, name: location.state.name});
+ //     console.log({id: location.state.id, name: location.state.name});
     }
  }, [location.state])
   

@@ -6,7 +6,7 @@ export default function Tarjoukset({ url, category, addToCart }) {
 
     useEffect(() => {
         async function prod() {
-            if (category !== null) {
+            if (category !== null  && category !== undefined) {
                 let address = '';
                 if (category !== null) {
                     address = url + 'products/getproducts.php/' + category?.id;
@@ -25,12 +25,11 @@ export default function Tarjoukset({ url, category, addToCart }) {
             }
         }
         prod();
-    }, [category])
+    }, [category, url])
 
     return (
         <div className="container" id="category-page">
-            <h3 className="mt-1">{category?.name}</h3>
-            <h5 id="category-info">Tarjoustuotteet</h5>
+            <h3 className="mt-2" id="category-info">Tarjoustuotteet</h3>
             {products.map(product => (
                 <div key={product.product_id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <Link to={{pathname: "/product/" + product.product_id}}><img className="card-img-top" src={url + "products/img/" + product.image} alt={product.product_name} /></Link>

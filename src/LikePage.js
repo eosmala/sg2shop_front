@@ -1,8 +1,8 @@
 import React from 'react'
-import likeArray from './Like';
+// import likeArray from './Like';
 
 function LikePage() {
-    console.log(likeArray);
+ //   console.log(likeArray);
     return (
         <div>
             <p>kekw</p>
