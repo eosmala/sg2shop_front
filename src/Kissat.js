@@ -1,6 +1,5 @@
 import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import placeholder from './img/logo.png';
 import Like from './Like';
 import likes from './Like';
 export default function Kissat({url, category, addToCart}) {

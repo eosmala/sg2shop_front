@@ -1,6 +1,5 @@
 import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import placeholder from './img/logo.png';
 import Like from './Like';
 export default function Pieneläimet({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
