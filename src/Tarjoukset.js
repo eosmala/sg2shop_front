@@ -32,7 +32,7 @@ export default function Tarjoukset({ url, category, addToCart }) {
             <h3 className="mt-1">{category?.name}</h3>
             <h5 id="category-info">Tarjoustuotteet</h5>
             {products.map(product => (
-                <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
+                <div key={product.product_id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <Link to={{pathname: "/product/" + product.product_id}}><img className="card-img-top" src={url + "products/img/" + product.image} alt={product.product_name} /></Link>
                     <div className="card-body">
                         <div className="card-title" key={product.product_id}>
