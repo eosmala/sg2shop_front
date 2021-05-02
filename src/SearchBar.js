@@ -25,7 +25,7 @@ export default function SearchBar() {
             value={criteria}
             onChange={e => setCriteria(e.target.value)} />
         <Link to={'SearchResults?product=' + criteria} criteria={criteria}>
-        <button id="searchBtn" type="submit" id="submit">Hae</button>
+        <button id="searchBtn" type="submit">Hae</button>
         </Link>
         </form>
         </div>
