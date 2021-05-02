@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function SearchBar() {
     const style = { marginLeft: "50px" };
@@ -26,7 +25,7 @@ export default function SearchBar() {
             value={criteria}
             onChange={e => setCriteria(e.target.value)} />
         <Link to={'SearchResults?product=' + criteria} criteria={criteria}>
-        <button id="searchBtn" type="submit"id="submit">Hae</button>
+        <button id="searchBtn" type="submit" id="submit">Hae</button>
         </Link>
         </form>
         </div>

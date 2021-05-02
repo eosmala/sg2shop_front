@@ -43,28 +43,29 @@ function save(e) {
   }
 
   return (
-      <div class="container">
+      <div  className="row my-3">
           <h3>Rekisteröidy</h3>
           <form onSubmit={save}>
               <div>
-                  <label>Käyttäjänimi</label>
+                  <label className="my-2 me-2">Käyttäjänimi</label>
                   <input type="text" id="usernm" value={userName} onChange={e => setUsername(e.target.value)}/>
               </div>
               <div>
-                  <label>Sähköposti</label>
+                  <label className="my-2 me-2">Sähköposti</label>
                   <input type="email" id="sposti" value={userEmail} onChange={e => setEmail(e.target.value)}/>
               </div>
               <div>
-                  <label>Salasana</label>
+                  <label className="my-2 me-2">Salasana</label>
                   <input type="password" id="spass" value={userPass} onChange={e => setPass(e.target.value)}/>
               </div>
               <div>
-              <input type="submit" name="register" value="Register"></input>
+              <input className="btn btn-outline-secondary m-2" type="submit" name="register" value="Register"></input>
               </div>
-              <div>
-                  <Link to='../login'>Kirjaudu</Link>
+
+          </form>              
+          <div>
+                  <Link to='../login' className="text-success">Kirjaudu</Link>
               </div>
-          </form>
       </div>
   )
 }

@@ -11,12 +11,12 @@ export default function LikePage() {
         }
     }, [])
 
-
     function getLikes() {
        
         console.log(likes);
         
     }
+
     return (
         <div>
             <p>kekw</p>
@@ -27,5 +27,5 @@ export default function LikePage() {
                 ))}
         </div>
     )
-}
+            }
 
