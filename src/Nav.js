@@ -39,17 +39,7 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                     </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
-                        <li>
-                            <Link className="nav-link text-decoration-none rounded" to="/login/LoginMain">Log in</Link>
-                        </li>
-
-                        <li>
-                            <Link className="nav-link text-decoration-none rounded" to="/Register">Register</Link>
-                        </li>
-                    </ul>
                     <ul className="navbar-nav m-auto">
-
                         {categories.map(category => (
                             <li key={category.category_id}>
                                 <NavLink
@@ -66,9 +56,16 @@ export default function Nav({ url, cart, setCategory, addToCart, emptyCart, remo
                                 </NavLink>
                             </li>
                         ))}
-                        <SearchBar />
+                        
                     </ul>
-
+                    <ul className="navbar-nav ml-auto">
+                        <li>
+                            <SearchBar />
+                        </li>
+                        <li>
+                            <Link className="nav-link" to="/login/LoginMain">Login</Link>
+                        </li>
+                    </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Cart

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import ProductInfo from './ProductInfo';
 
 export default function SearchResults({addToCart}) {
     let [results, setResults] = useState([]);
@@ -9,10 +8,10 @@ export default function SearchResults({addToCart}) {
     let location = useLocation();
  
 
-    useEffect(async() => {
+    useEffect(() => {
+        async function prod() {
             try {
                 const address = url + 'products/search.php' + location.search;
-                console.log(address);
                 const response = await fetch(address);
                 let json = await response.json();
                 if (response.ok) {
@@ -24,6 +23,8 @@ export default function SearchResults({addToCart}) {
                 alert(error);
               
             }
+        }
+        prod();
         }, [])
 
         // jos ei hakutuloksia näytä tämä

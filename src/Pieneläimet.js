@@ -1,6 +1,5 @@
 import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import placeholder from './img/logo.png';
 import Like from './Like';
 export default function Pieneläimet({url, category, addToCart}) {
     const [products, setProducts] = useState([]);
@@ -8,11 +7,9 @@ export default function Pieneläimet({url, category, addToCart}) {
     useEffect(() => {
         
         async function prod() {
-            if (category !== null) {
-                let address = '';
-                if (category !== null) {
-                    address = url + 'products/getproducts.php/' + category?.id;
-                }
+            if (category !== null && category !== undefined) {
+                let address = url + 'products/getproducts.php/' + category?.id;
+    
                 try {
                     const response = await fetch(address);
                     const json = await response.json();
@@ -27,14 +24,13 @@ export default function Pieneläimet({url, category, addToCart}) {
             }
         }
         prod();
-    }, [category])
+    }, [category, url])
 
     return (
         <div className="container" id="category-page">
-            <h3 className="mt-1">{category?.name}</h3>
-            <h5 id="category-info">Pieneläinten ruoat ja tarvikkeet</h5>
+            <h3 className="mt-2" id="category-info">Pieneläinten ruoat ja tarvikkeet</h3>
             {products.map(product => (
-                <div key={product.id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
+                <div key={product.product_id} className="card p-2 m-2" style={{ width: "18rem", display: "inline-block", border: "1px solid black" }}>
                     <Link to={{pathname: "/product/" + product.product_id}}><img className="card-img-top" src={url + "products/img/" + product.image} alt={product.product_name} /></Link>
                     <div className="card-body">
                         <div className="card-title" key={product.product_id}>

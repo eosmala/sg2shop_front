@@ -18,21 +18,20 @@ import Login from './login/LoginMain';
 import Addproduct from './admin/Addproduct';
 import LikePage from './LikePage';
 import Register from './Register';
+import Editprofile from './EditProfile';
 
+const URL = "http://localhost/sg2shop_back/"
 
 function App() {
   const [category, setCategory] = useState(null);
   const [cart, setCart] = useState([]);
 
-  const URL = "http://localhost/sg2shop_back/"
-
   let location = useLocation();
   
  useEffect(() => {
-  
-    if(location.state !==undefined) {
-      setCategory({id: location.state.id,name: location.state.name});
-      console.log("category " + category)
+    if(location.state !== undefined) {
+      setCategory({id: location.state.id, name: location.state.name});
+ //     console.log({id: location.state.id, name: location.state.name});
     }
  }, [location.state])
   
@@ -138,6 +137,7 @@ function App() {
 
      <Route path="/Login" component={Login}/>
      <Route path="/Register" component={Register}/>
+     <Route path="/Editprofile" component={Editprofile}/>
         </Switch>
       </div>
       <Footer />
@@ -169,7 +169,7 @@ function App() {
   }
 
   function updateAmount(amount, product) {
-    product.amount = parseInt(amount);
+    product.amount = amount;
     const index = cart.findIndex((item => item.product_id === product.product_id));
     const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
